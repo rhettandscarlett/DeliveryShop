@@ -1,0 +1,214 @@
+.choose-file-container {
+    overflow: auto;
+    height: 400px;
+}
+
+.file-container {
+    /*margin-top: 15px;*/
+    /*margin-left: 5px;*/
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.image-container {
+    border: 2px solid transparent;
+    height: 104px;
+}
+
+.image-container-selected {
+    border: 2px solid #f6a828;
+}
+
+.image-container-no-image {
+    width: 104px;
+    background-color: #dfdfdf;
+}
+
+.file-type-image-icon {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+/* choose file */
+.choose-file-container .file-container .choose-files-btn-group {
+    display: none;
+    clear: both;
+    margin-left: -65px;
+    margin-right: 10px;
+    margin-top: 2px;
+    top: 10px;
+    position: absolute;
+}
+
+.choose-file-container .file-container .choose-files-btn-group .choose-files-remove-one {
+    display: none;
+}
+
+.choose-file-container .file-container .choose-files-btn-group .choose-files-edit-one {
+    display: none;
+}
+
+.choose-file-container .file-container div:hover > .choose-files-btn-group {
+    display: inline;
+}
+
+.choose-file-container .file-edit-file-model-info {
+    display: none;
+}
+
+.file-form-selected-file-container-with-filename .file-choose-file-show-file-info {
+
+}
+
+/* selected files */
+.form-selected-file-container {
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    width: auto;
+    display: block;
+}
+
+.form-selected-file-container .file-container .choose-files-btn-group {
+    display: none;
+    float: left;
+    margin-left: -80px;
+    margin-right: 5px;
+    margin-top: 2px;
+    top: 10px;
+    position: absolute;
+}
+
+.form-selected-file-container .file-container .choose-files-btn-group .choose-files-choose-one {
+    display: none;
+}
+
+.form-selected-file-container .file-container div:hover > .choose-files-btn-group {
+    /*display: inline;*/
+}
+
+/* choose file only list name*/
+.choose-file-container-filename-view .file-container {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.choose-file-container-filename-view .file-container .image-container {
+    height: auto;
+}
+
+.choose-file-container-filename-view .file-container .choose-files-btn-group {
+    display: none;
+    clear: both;
+    margin-left: -65px;
+    margin-right: 10px;
+    margin-top: 2px;
+    top: 10px;
+    position: absolute;
+}
+
+.choose-file-container-filename-view .file-container .choose-files-btn-group .choose-files-remove-one {
+    display: none;
+}
+
+.choose-file-container-filename-view .file-container .choose-files-btn-group .choose-files-edit-one {
+    display: none;
+}
+
+.choose-file-container-filename-view .file-container div:hover > .choose-files-btn-group {
+    /*display: inline;*/
+}
+
+/* selectd list with filename */
+.file-form-selected-file-container-with-filename {
+
+}
+
+.file-form-selected-file-container-with-filename .file-container {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.file-form-selected-file-container-with-filename .file-container .image-container {
+    height: auto;
+}
+
+.file-form-selected-file-container-with-filename .file-container .choose-files-btn-group {
+    display: none;
+    margin-left: -80px;
+    margin-right: 5px;
+    margin-top: 2px;
+    top: 10px;
+    position: absolute;
+}
+
+.file-form-selected-file-container-with-filename .file-container .choose-files-btn-group .choose-files-choose-one {
+    display: none;
+}
+
+.file-form-selected-file-container-with-filename .file-container div:hover > .choose-files-btn-group {
+    /*display: inline;*/
+}
+
+.file-form-selected-file-container-with-filename .file-edit-file-model-info {
+
+}
+
+.file-form-selected-file-container-with-filename .file-choose-file-show-file-info {
+    display: none;
+}
+
+/* language */
+
+.language-group-flag-title {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+}
+
+.language-group-flag-title p {
+    display: inline-block;
+}
+
+.flags {
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.filter-textbox {
+    margin-left: 5px;
+    display: none;
+}
+
+.file-upload-loading {
+    margin-top: 50%;
+    margin-left: 50%;
+    font-size: 50px;
+}
+#file-manager-listing {
+  background-color: rgb(255, 255, 255)!important
+}
+
+#file-manager-listing a {
+  color: #000;
+}
+.upload-btn-wrap .qq-upload-button{
+  background-color: #0090ff;
+  float: left;
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.upload-btn-wrap .qq-upload-list{
+  content: '';
+  width: 100%;
+  clear: both;
+  min-height: 1px;
+  display: block;
+}

@@ -1,0 +1,4 @@
+.git
+app/Config/database.php
+app/Config/core.php
+app/Locale/deu/LC_MESSAGES/*
