@@ -1,0 +1,840 @@
+msgid   "About Us"
+msgstr  "Về chúng tôi"
+
+msgid   "Account"
+msgstr  "Tài khoản"
+
+msgid   "Account list"
+msgstr  "Danh sách tài khoản"
+
+msgid   "Action"
+msgstr  "Hành động"
+
+msgid   "Actions"
+msgstr  "Hành động"
+
+msgid   "Activate"
+msgstr  "Kích hoạt"
+
+msgid   "Activated"
+msgstr  "Đã kích hoạt"
+
+msgid   "Active"
+msgstr  "Kích hoạt"
+
+msgid   "Add"
+msgstr  "Thêm mới"
+
+msgid   "Add Admin"
+msgstr  "Thêm admin"
+
+msgid   "Add New"
+msgstr  "Thêm mới"
+
+msgid   "Add data access"
+msgstr  ""
+
+msgid   "Add users"
+msgstr  ""
+
+msgid   "Address"
+msgstr  ""
+
+msgid   "Admin"
+msgstr  "Người quản lý"
+
+msgid   "Admin list"
+msgstr  ""
+
+msgid   "Administration panel"
+msgstr  "Khung quản lý hệ thống"
+
+msgid   "All"
+msgstr  ""
+
+msgid   "All Cache cleaned!"
+msgstr  ""
+
+msgid   "All files in this folder will be remove also. Are you sure you want to delete #%s?"
+msgstr  ""
+
+msgid   "Are you sure delete selected file and folder?"
+msgstr  ""
+
+msgid   "Are you sure you want to delete #%s?"
+msgstr  ""
+
+msgid   "Are you sure you want to delete the snapshot at %s?"
+msgstr  ""
+
+msgid   "Are you sure you want to delete this?"
+msgstr  ""
+
+msgid   "Are you surely want to delete #%s ?"
+msgstr  ""
+
+msgid   "Back"
+msgstr  ""
+
+msgid   "Back to list"
+msgstr  ""
+
+msgid   "Backup"
+msgstr  ""
+
+msgid   "Bill Code"
+msgstr  "Mã bill"
+
+msgid   "Bill Name"
+msgstr  "Tên người gửi trên bill"
+
+msgid   "Billing Code"
+msgstr  "Mã bill"
+
+msgid   "Billing List"
+msgstr  "Danh sách bill"
+
+msgid   "Billing Management"
+msgstr  "Trang quản lý bill"
+
+msgid   "Billing Name"
+msgstr  "Tên người gửi trên bill"
+
+msgid   "Body"
+msgstr  ""
+
+msgid   "CMS translation was saved successfully"
+msgstr  ""
+
+msgid   "Can not excute."
+msgstr  ""
+
+msgid   "Cancel"
+msgstr  ""
+
+msgid   "Cannot delete yourself."
+msgstr  ""
+
+msgid   "Cannot get your information"
+msgstr  ""
+
+msgid   "Cannot import line %s"
+msgstr  ""
+
+msgid   "Cannot login via Facebook"
+msgstr  ""
+
+msgid   "Cannot login via Google Plus"
+msgstr  ""
+
+msgid   "Cannot login via Twitter"
+msgstr  ""
+
+msgid   "Cannot open the uploaded file"
+msgstr  ""
+
+msgid   "Cannot save your data"
+msgstr  ""
+
+msgid   "Cannot save your data."
+msgstr  ""
+
+msgid   "Categories"
+msgstr  ""
+
+msgid   "Change Language"
+msgstr  ""
+
+msgid   "Choose File"
+msgstr  ""
+
+msgid   "Choose Files"
+msgstr  ""
+
+msgid   "Choose One File Lang"
+msgstr  ""
+
+msgid   "Clean successfully"
+msgstr  ""
+
+msgid   "Competing Models"
+msgstr  ""
+
+msgid   "Contact"
+msgstr  ""
+
+msgid   "Controller"
+msgstr  ""
+
+msgid   "Create a snapshot"
+msgstr  ""
+
+msgid   "Created Time"
+msgstr  ""
+
+msgid   "Dashboard"
+msgstr  ""
+
+msgid   "Data"
+msgstr  ""
+
+msgid   "Data Access Id, Data Id already exists"
+msgstr  ""
+
+msgid   "Data access list"
+msgstr  ""
+
+msgid   "DataAccess list"
+msgstr  ""
+
+msgid   "Date"
+msgstr  ""
+
+msgid   "Deactivate"
+msgstr  ""
+
+msgid   "Deactivated"
+msgstr  ""
+
+msgid   "Default Procedures for Location List"
+msgstr  ""
+
+msgid   "Delete"
+msgstr  ""
+
+msgid   "Delete %s successfully"
+msgstr  ""
+
+msgid   "Description"
+msgstr  ""
+
+msgid   "Deutsch"
+msgstr  ""
+
+msgid   "Disable"
+msgstr  ""
+
+msgid   "Edit"
+msgstr  ""
+
+msgid   "Edit Bill Code"
+msgstr  ""
+
+msgid   "Edit File"
+msgstr  ""
+
+msgid   "Edit Information"
+msgstr  ""
+
+msgid   "Email"
+msgstr  ""
+
+msgid   "Email Template"
+msgstr  ""
+
+msgid   "Email Template list"
+msgstr  ""
+
+msgid   "Email already exists"
+msgstr  ""
+
+msgid   "Empty files"
+msgstr  ""
+
+msgid   "English"
+msgstr  ""
+
+msgid   "Entfernen"
+msgstr  ""
+
+msgid   "Error!!!"
+msgstr  ""
+
+msgid   "Exclude"
+msgstr  ""
+
+msgid   "Export"
+msgstr  ""
+
+msgid   "Fail - Re update"
+msgstr  ""
+
+msgid   "Failed upload"
+msgstr  ""
+
+msgid   "Feedback"
+msgstr  ""
+
+msgid   "File Folder Management"
+msgstr  ""
+
+msgid   "File Name"
+msgstr  ""
+
+msgid   "File parameter is missing"
+msgstr  ""
+
+msgid   "Filename"
+msgstr  ""
+
+msgid   "Files"
+msgstr  ""
+
+msgid   "Filter by name"
+msgstr  ""
+
+msgid   "Generate successfully"
+msgstr  ""
+
+msgid   "Hours"
+msgstr  ""
+
+msgid   "Id"
+msgstr  ""
+
+msgid   "Image Not Available"
+msgstr  ""
+
+msgid   "Import"
+msgstr  ""
+
+msgid   "Import CMS translation"
+msgstr  ""
+
+msgid   "Import successfully"
+msgstr  ""
+
+msgid   "In Location"
+msgstr  ""
+
+msgid   "In Schedule"
+msgstr  ""
+
+msgid   "Include"
+msgstr  ""
+
+msgid   "Information"
+msgstr  ""
+
+msgid   "Input keyword for searching"
+msgstr  ""
+
+msgid   "Is Owner"
+msgstr  ""
+
+msgid   "Items per page"
+msgstr  ""
+
+msgid   "Key"
+msgstr  ""
+
+msgid   "Key has already been taken"
+msgstr  ""
+
+msgid   "Languages"
+msgstr  ""
+
+msgid   "Last Login"
+msgstr  ""
+
+msgid   "Leave password and password confirmation to blank if you don't want to change your password."
+msgstr  ""
+
+msgid   "Library"
+msgstr  ""
+
+msgid   "Location"
+msgstr  ""
+
+msgid   "Location List"
+msgstr  ""
+
+msgid   "Locations"
+msgstr  ""
+
+msgid   "Log In"
+msgstr  ""
+
+msgid   "Logout"
+msgstr  ""
+
+msgid   "Markets"
+msgstr  ""
+
+msgid   "Media"
+msgstr  ""
+
+msgid   "Minimum "
+msgstr  ""
+
+msgid   "Minutes"
+msgstr  ""
+
+msgid   "Model"
+msgstr  ""
+
+msgid   "Model Line"
+msgstr  ""
+
+msgid   "Models"
+msgstr  ""
+
+msgid   "More Detail"
+msgstr  ""
+
+msgid   "NOTE: PLEASE BACKUP BEFORE UPDATE. Are you sure you want to revert the snapshot at %s?"
+msgstr  ""
+
+msgid   "Name"
+msgstr  ""
+
+msgid   "Name field cannot be left blank"
+msgstr  ""
+
+msgid   "Name in this folder already exists"
+msgstr  ""
+
+msgid   "New Password"
+msgstr  ""
+
+msgid   "New Password Confirm"
+msgstr  ""
+
+msgid   "New Password Confirmation"
+msgstr  ""
+
+msgid   "Next"
+msgstr  ""
+
+msgid   "No data"
+msgstr  ""
+
+msgid   "No data available in table"
+msgstr  ""
+
+msgid   "No files"
+msgstr  ""
+
+msgid   "Not run"
+msgstr  ""
+
+msgid   "Number Attempt"
+msgstr  ""
+
+msgid   "Oauth Data"
+msgstr  ""
+
+msgid   "Oauth Provider"
+msgstr  ""
+
+msgid   "Oauth Uid"
+msgstr  ""
+
+msgid   "Order"
+msgstr  ""
+
+msgid   "PTI Express Online"
+msgstr  ""
+
+msgid   "PTI Express Website"
+msgstr  ""
+
+msgid   "Parent"
+msgstr  ""
+
+msgid   "Parent Folder"
+msgstr  ""
+
+msgid   "Password"
+msgstr  ""
+
+msgid   "Password Confirmation field cannot be left blank"
+msgstr  ""
+
+msgid   "Password Hint"
+msgstr  ""
+
+msgid   "Password does not match the confirmation password"
+msgstr  ""
+
+msgid   "Password field cannot be left blank"
+msgstr  ""
+
+msgid   "Password hint"
+msgstr  ""
+
+msgid   "Picked up Time"
+msgstr  ""
+
+msgid   "Picked up time"
+msgstr  ""
+
+msgid   "Please activate your account"
+msgstr  ""
+
+msgid   "Please enter a text"
+msgstr  ""
+
+msgid   "Please enter a text between 1 to 255 characters"
+msgstr  ""
+
+msgid   "Please enter a text no larger than ' . $structure['length'] . ' characters long"
+msgstr  ""
+
+msgid   "Please enter a text no larger than 255 characters long"
+msgstr  ""
+
+msgid   "Please enter a text no larger than 40 characters long"
+msgstr  ""
+
+msgid   "Please enter a valid date format"
+msgstr  ""
+
+msgid   "Please enter a valid email address"
+msgstr  ""
+
+msgid   "Please enter a valid number"
+msgstr  ""
+
+msgid   "Please login to continue"
+msgstr  ""
+
+msgid   "Please select one"
+msgstr  ""
+
+msgid   "Plugin"
+msgstr  ""
+
+msgid   "Pre- / Posttest"
+msgstr  ""
+
+msgid   "Present Time"
+msgstr  ""
+
+msgid   "Preview"
+msgstr  ""
+
+msgid   "Proceduces"
+msgstr  ""
+
+msgid   "Procedure"
+msgstr  ""
+
+msgid   "Profile"
+msgstr  ""
+
+msgid   "Query"
+msgstr  ""
+
+msgid   "Questionaries"
+msgstr  ""
+
+msgid   "Questions"
+msgstr  ""
+
+msgid   "Recover password link is sent"
+msgstr  ""
+
+msgid   "Register"
+msgstr  ""
+
+msgid   "Remember Me"
+msgstr  ""
+
+msgid   "Required Fields"
+msgstr  ""
+
+msgid   "Required fields"
+msgstr  ""
+
+msgid   "Reset Token Password"
+msgstr  ""
+
+msgid   "Reset Token Time"
+msgstr  ""
+
+msgid   "Results"
+msgstr  ""
+
+msgid   "Revert"
+msgstr  ""
+
+msgid   "Rights"
+msgstr  ""
+
+msgid   "Role"
+msgstr  ""
+
+msgid   "Role list"
+msgstr  ""
+
+msgid   "RoleAccess list"
+msgstr  ""
+
+msgid   "RoleRight list"
+msgstr  ""
+
+msgid   "Roles"
+msgstr  ""
+
+msgid   "Rollback %s successfully"
+msgstr  ""
+
+msgid   "Running"
+msgstr  ""
+
+msgid   "Save"
+msgstr  ""
+
+msgid   "Scanned and updated successfully, have more %s words from last time."
+msgstr  ""
+
+msgid   "Schedule"
+msgstr  ""
+
+msgid   "Schedule #%s have no location or no procedure for its location. Please create them first."
+msgstr  ""
+
+msgid   "Schedule For This Bill"
+msgstr  ""
+
+msgid   "Schedule List"
+msgstr  ""
+
+msgid   "Schedule Management"
+msgstr  ""
+
+msgid   "Schedules"
+msgstr  ""
+
+msgid   "Search"
+msgstr  ""
+
+msgid   "Searching..."
+msgstr  ""
+
+msgid   "Select Files"
+msgstr  ""
+
+msgid   "Select a file"
+msgstr  ""
+
+msgid   "Select a file to import"
+msgstr  ""
+
+msgid   "Send"
+msgstr  ""
+
+msgid   "Settings"
+msgstr  ""
+
+msgid   "Sign In"
+msgstr  ""
+
+msgid   "Size"
+msgstr  ""
+
+msgid   "Status"
+msgstr  ""
+
+msgid   "Subject"
+msgstr  ""
+
+msgid   "Submit"
+msgstr  ""
+
+msgid   "Success!!!"
+msgstr  ""
+
+msgid   "Sure Run ?"
+msgstr  ""
+
+msgid   "System Snapshot List"
+msgstr  ""
+
+msgid   "Systems"
+msgstr  "Hệ Thống"
+
+msgid   "Tests"
+msgstr  ""
+
+msgid   "Texts"
+msgstr  ""
+
+msgid   "The email or password you entered is incorrect"
+msgstr  ""
+
+msgid   "The email or password you entered is incorrect."
+msgstr  ""
+
+msgid   "The email you entered is not exist"
+msgstr  ""
+
+msgid   "The header of Excel file shoud be in format"
+msgstr  ""
+
+msgid   "The token is expired"
+msgstr  ""
+
+msgid   "The token is not correct"
+msgstr  ""
+
+msgid   "There is no Schedule is defined for Billing Management. Please create at lease a Schedule first."
+msgstr  ""
+
+msgid   "This  has been deleted"
+msgstr  ""
+
+msgid   "This Admin has been deleted"
+msgstr  ""
+
+msgid   "This Category has been deleted"
+msgstr  ""
+
+msgid   "This Model has been deleted"
+msgstr  ""
+
+msgid   "This Role has been deleted"
+msgstr  ""
+
+msgid   "This field cannot be left blank"
+msgstr  ""
+
+msgid   "Thumbnail"
+msgstr  ""
+
+msgid   "Time"
+msgstr  ""
+
+msgid   "Time Zone"
+msgstr  ""
+
+msgid   "Timezone"
+msgstr  ""
+
+msgid   "Token required: "
+msgstr  ""
+
+msgid   "Training Modules"
+msgstr  ""
+
+msgid   "Trainings"
+msgstr  ""
+
+msgid   "Translation"
+msgstr  ""
+
+msgid   "Type"
+msgstr  ""
+
+msgid   "Unable to delete your data. It\'s in used"
+msgstr  ""
+
+msgid   "Update"
+msgstr  ""
+
+msgid   "Update Profile"
+msgstr  ""
+
+msgid   "Update Roles For %s"
+msgstr  ""
+
+msgid   "Update User List For %s"
+msgstr  ""
+
+msgid   "Update list"
+msgstr  ""
+
+msgid   "Updated Time"
+msgstr  ""
+
+msgid   "Updated at"
+msgstr  ""
+
+msgid   "Upload"
+msgstr  ""
+
+msgid   "Upload File"
+msgstr  ""
+
+msgid   "Uploads"
+msgstr  ""
+
+msgid   "User"
+msgstr  ""
+
+msgid   "User list"
+msgstr  ""
+
+msgid   "Username already exists"
+msgstr  ""
+
+msgid   "Users"
+msgstr  ""
+
+msgid   "Value"
+msgstr  ""
+
+msgid   "Vehicle Comparison"
+msgstr  ""
+
+msgid   "Vehicles"
+msgstr  ""
+
+msgid   "Vietnamese"
+msgstr  ""
+
+msgid   "View"
+msgstr  ""
+
+msgid   "View Log"
+msgstr  ""
+
+msgid   "Welcome to PTI Express - This page is for admin only."
+msgstr  ""
+
+msgid   "You are not authorized to access this page"
+msgstr  ""
+
+msgid   "Your account has been disabled"
+msgstr  ""
+
+msgid   "Your account has been disabled."
+msgstr  ""
+
+msgid   "Your account is activated. Please login to continue."
+msgstr  ""
+
+msgid   "Your account was not activated. Please check your email then active the account to continue"
+msgstr  ""
+
+msgid   "Your changes could not be saved."
+msgstr  ""
+
+msgid   "Your changes have been saved"
+msgstr  ""
+
+msgid   "Your data is saved successfully"
+msgstr  ""
+
+msgid   "Your data is saved successfully."
+msgstr  ""
+
+msgid   "Your folder is deleted successfully"
+msgstr  ""
+
+msgid   "Your password have been changed."
+msgstr  ""
+
+msgid   "Your profile have been saved successfully."
+msgstr  ""
+
+msgid   "error connecting to twitter! try again later"
+msgstr  ""
+
+msgid   "error, try again later!"
+msgstr  ""
+
+msgid   "remember_me"
+msgstr  ""
+

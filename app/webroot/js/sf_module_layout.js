@@ -1,0 +1,1 @@
+$('.companylogo').attr('src', 'img/companylogo.png');
