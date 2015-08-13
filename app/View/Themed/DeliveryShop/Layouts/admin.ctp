@@ -38,6 +38,7 @@
       'libs/jquery.bxslider',
       'libs/jquery.tmpl.min',
       'libs/jquery.gritter.min',
+      'libs/moment',
       'libs/bootstrap-datetimepicker',
       'common',
       'core',

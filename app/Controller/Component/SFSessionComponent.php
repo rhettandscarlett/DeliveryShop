@@ -37,9 +37,6 @@ class SFSessionComponent extends SessionComponent {
   public function setFlash($message, $element = 'default', $params = array(), $key = 'flash') {
     if ($key == 'flash') {
       $params = $this->controller->params->params;
-      if (isset($params['plugin']) && !$params['plugin']) {
-        $params['plugin'] = null;
-      }
       $key = sprintf("%s-%s-%s", $params['plugin'], $params['controller'], $params['action']);
     }
     parent::setFlash($message, $element, $params, $key);

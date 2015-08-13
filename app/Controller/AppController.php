@@ -26,6 +26,7 @@ App::uses('AppModel', 'Model');
 App::uses('ConnectionManager', 'Model');
 App::uses('Sanitize', 'Utility');
 App::uses('SFRouter', 'Lib');
+App::uses('DeliLib', 'Lib');
 
 /**
  * Application Controller

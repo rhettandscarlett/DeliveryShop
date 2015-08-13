@@ -555,4 +555,57 @@ class AppModel extends Model {
     ));
   }
 
+  /**
+   * param $keyAndModelOfKeyList: eg:  array(key1 => ModelName1, key2 => ModelName2)
+   * @desc: Another way of combine array to compare with Hash::combine(). This function can combine unlimited numbers of key want to combine
+   * @desc2: $unsetModelList: those modelClass will be ignore at the last level of data.
+   */
+  public static function generalCombine($data, $modelClass, $keyAndModelOfKeyList = array(), $unsetModelList = array()) {
+    $returnData = array();
+    $listOfCombineKey = array_keys($keyAndModelOfKeyList);
+    if (count($listOfCombineKey) == 1) {
+      foreach ($data as $singleData) {
+        $each = $singleData[$modelClass];
+        if (!isset($returnData[$each[$listOfCombineKey[0]]])) {
+          foreach ($unsetModelList as $eachUnsetModelList) {
+            if (isset($singleData[$eachUnsetModelList])) {
+              unset($singleData[$eachUnsetModelList]);
+            }
+          }
+          $returnData[$each[$listOfCombineKey[0]]] = $singleData;
+        }
+      }
+      return $returnData;
+    } else {
+      $groupKeys = array();
+      foreach ($data as $singleData) {
+        $each = $singleData[$modelClass];
+        if (!isset($returnData[$each[$listOfCombineKey[0]]])) {
+          $returnData[$each[$listOfCombineKey[0]]] = array();
+          $groupKeys[$each[$listOfCombineKey[0]]] = array();
+          if (isset($singleData[$keyAndModelOfKeyList[$listOfCombineKey[0]]])) {
+            $groupKeys[$each[$listOfCombineKey[0]]] = array($keyAndModelOfKeyList[$listOfCombineKey[0]] => $singleData[$keyAndModelOfKeyList[$listOfCombineKey[0]]]);
+          }
+        }
+        if (isset($returnData[$each[$listOfCombineKey[0]]])) {
+          array_push($returnData[$each[$listOfCombineKey[0]]], $singleData);
+        }
+      }
+      unset($keyAndModelOfKeyList[$listOfCombineKey[0]]);
+      foreach ($groupKeys as $groupKey => $currentDataAtIndex) {
+        $returnData[$groupKey] = self::generalCombine($returnData[$groupKey], $modelClass, $keyAndModelOfKeyList, $unsetModelList);
+        foreach ($currentDataAtIndex as $currentIndex => $currentData) {
+          $returnData[$groupKey][$currentIndex] = $currentData;
+        }
+      }
+    }
+    return $returnData;
+  }
+
+  public function sortOrder($orders = array()) {
+    foreach ($orders as $id => $order) {
+      $this->save(array('id' => $id, 'order' => 'order'));
+    }
+  }
+
 }

@@ -3,12 +3,11 @@
 Configure::write('MultiLanguage.relativepath', 'multilanguage');
 Configure::write('MultiLanguage.directory', WWW_ROOT . Configure::read('MultiLanguage.relativepath'));
 Configure::write('MultiLanguage.list', array(
-  //'deu' => __('Deutsch'),
-//  'eng' => __('English'),
+
 ));
 Configure::write('MultiLanguage.app_mapping_list', array(
   'en' => 'eng',
-  'de' => 'deu',
+  'vi' => 'vie',
 ));
-Configure::write('MultiLanguage.fallback', array('deu' => __('Deutsch')));
-Configure::write('Config.language', 'deu');
+Configure::write('MultiLanguage.fallback', array('vie' => __('Vietnamese')));
+Configure::write('Config.language', 'vie');

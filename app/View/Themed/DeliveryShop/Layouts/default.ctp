@@ -28,7 +28,8 @@
       'font-awesome.min',
       'jquery.ui',
       'bootstrap-datetimepicker',
-      'File.file'
+      'File.file',
+      'common',
     ));
     echo $this->fetch('css');
     ?>
@@ -36,6 +37,7 @@
     echo $this->Html->script(array(
       'libs/jquery-1.10.2.min',
       'libs/bootstrap.min',
+      'libs/moment',
       'libs/bootstrap-datetimepicker',
     ));
     echo $this->Layout->js();
@@ -53,7 +55,6 @@
         <?php
         echo $this->element('frontend/header');
         echo $this->element('frontend/menu');
-        echo $this->Layout->sessionFlash();
         echo $this->fetch('content');
         echo $this->element('frontend/footer');
         ?>

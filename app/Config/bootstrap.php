@@ -122,6 +122,7 @@ CakePlugin::load('SecretAccess', array('bootstrap' => false, 'routes' => true));
 Configure::write('USER_EXCLUDE_CONTROLLER', array(
   'controller' => array(
     'Test01Controller' => array('action1' => 1),
+    'DeliPageController' => array(),
   ),
   'plugin' => array(
     'MultiLanguage' => array(
@@ -190,9 +191,17 @@ Configure::write('FILE_PLUGIN_CONFIG', array(
 ));
 
 Configure::write('DELI_ACTIVATED_STATUS', array(
-  1 => __('Actiavte'),
-  0 => __('Deactiavte'),
+  1 => __('Activate'),
+  0 => __('Deactivate'),
 ));
 
+//define('DELI_TRANSIT_STATUS_PICKED_UP', 'pickedup');
+define('DELI_TRANSIT_STATUS_INTRANSIT', 'intransit');
+define('DELI_TRANSIT_STATUS_DELIVERED', 'delivered');
+Configure::write('DELI_TRANSIT_STATUS_LIST', array(
+//  DELI_TRANSIT_STATUS_PICKED_UP => __('Shipment Picked Up'),
+  DELI_TRANSIT_STATUS_INTRANSIT => __('Intransit'),
+  DELI_TRANSIT_STATUS_DELIVERED => __('Delivered'),
+));
 
 include_once(__DIR__ . '/functions.php');

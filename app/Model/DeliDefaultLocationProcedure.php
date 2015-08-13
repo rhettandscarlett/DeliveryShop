@@ -58,14 +58,16 @@ class DeliDefaultLocationProcedure extends AppModel {
         'allowEmpty' => true,
       ),
     ),
-    'duration' => 
-    array (
-      'decimal' => 
-      array (
-        'rule' => 'decimal',
-        'message' => 'Please enter a valid number',
-        'allowEmpty' => true,
-      ),
-    ),
   );
+
+  public function getDefaultProcedure($scheduleId) {
+    App::uses('DeliLocation', 'Model');
+    $DeliLocationInstance = new DeliLocation();
+    $firstLocation = $DeliLocationInstance->find('first', array('conditions' => array('DeliLocation.schedule_id' => $scheduleId), 'order' => array('DeliLocation.order ASC')));
+    if (empty($firstLocation)) {
+      return array();
+    }
+    return $this->find('first', array('conditions' => array('DeliDefaultLocationProcedure.location_id' => $firstLocation['DeliLocation']['id']), 'order' => array('DeliDefaultLocationProcedure.order ASC')));
+  }
+
 }

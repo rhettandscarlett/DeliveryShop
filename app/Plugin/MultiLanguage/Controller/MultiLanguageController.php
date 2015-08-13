@@ -230,6 +230,7 @@ class MultiLanguageController extends AppController {
   }
 
   public function importCms() {
+    $this->layout = 'admin';
     $this->MultiLanguageModel->useTable = false;
     $listLanguage = array_keys(array_merge(Configure::read('MultiLanguage.fallback'), Configure::read('MultiLanguage.list')));
     $msgError = '';

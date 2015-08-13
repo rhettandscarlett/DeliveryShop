@@ -8,16 +8,16 @@ class DeliBilling extends AppModel {
   var $multiLanguage = null;
 
   public $belongsTo = array (
-    'DeliDefaultLocationProcedure' => 
+    'DeliSchedule' =>
     array (
-      'className' => 'DeliDefaultLocationProcedure',
-      'foreignKey' => 'default_location_procedure_id',
+      'className' => 'DeliSchedule',
+      'foreignKey' => 'schedule_id',
     ),
   );
 
   public $actsAs = array('MultiLanguage.MultiLanguage');
   var $validate = array (
-    'default_location_procedure_id' => 
+    'schedule_id' =>
     array (
       'notNull' => 
       array (
@@ -86,19 +86,6 @@ class DeliBilling extends AppModel {
           1 => 255,
         ),
         'message' => 'Please enter a text no larger than 255 characters long',
-        'allowEmpty' => true,
-      ),
-    ),
-    'init_time' => 
-    array (
-      'datetime' => 
-      array (
-        'rule' => 
-        array (
-          0 => 'datetime',
-          1 => NULL,
-        ),
-        'message' => 'Please enter a valid date format',
         'allowEmpty' => true,
       ),
     ),

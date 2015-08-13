@@ -27,6 +27,8 @@ CREATE TABLE `deli_location` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `schedule_id` int(11) unsigned,
   `name` varchar(255) NOT NULL DEFAULT '',
+  `timezone` varchar(255) NOT NULL DEFAULT '',
+  `order` int(11),
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
   `deleted_time` datetime DEFAULT NULL,
@@ -42,7 +44,7 @@ CREATE TABLE `deli_default_location_procedure` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` TEXT DEFAULT '',
   `order` int(11),
-  `duration` FLOAT,
+  `time` varchar(255) DEFAULT NOT NULL,
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
   `deleted_time` datetime DEFAULT NULL,
@@ -88,7 +90,7 @@ CREATE TABLE `deli_billing_runtime_procedure` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `billing_id` int(11) unsigned,
   `default_location_procedure_id` int(11) unsigned,
-  `duration` FLOAT,
+  `time` varchar(255) DEFAULT NOT NULL,
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
   `deleted_time` datetime DEFAULT NULL,
@@ -99,7 +101,21 @@ CREATE TABLE `deli_billing_runtime_procedure` (
   CONSTRAINT `runtime_procedure_to_default_location_procedure` FOREIGN KEY (`default_location_procedure_id`) REFERENCES `deli_default_location_procedure` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `deli_page`;
+CREATE TABLE `deli_page` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `content` BLOB,
+  `order` int(11),
+  `created_time` datetime DEFAULT NULL,
+  `updated_time` datetime DEFAULT NULL,
+  `deleted_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+alter table `deli_billing` add `estimate_date` int(5) after `init_time`;
+alter table `deli_default_location_procedure` add visible boolean default 1 after `name`;
+alter table `deli_default_location_procedure` add plus_day int (11) default 0 after `time`;
 
 
 

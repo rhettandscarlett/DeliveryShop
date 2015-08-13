@@ -28,12 +28,30 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 
-Router::connect('/', array('controller' => 'Page', 'action' => 'index'));
+Router::connect('/', array('controller' => 'DeliPage', 'action' => 'index'));
+Router::connect('/homepage', array('controller' => 'DeliPage', 'action' => 'index', 'homepage'));
+Router::connect('/tracking', array('controller' => 'DeliPage', 'action' => 'index', 'tracking'));
+Router::connect('/service', array('controller' => 'DeliPage', 'action' => 'index', 'service'));
+Router::connect('/introduce', array('controller' => 'DeliPage', 'action' => 'index', 'introduce'));
+Router::connect('/contact', array('controller' => 'DeliPage', 'action' => 'index', 'contact'));
 Router::connect('/admin', array('controller' => 'Dashboard', 'action' => 'index'));
+
 Router::connect('/admin/schedule', array('controller' => 'DeliSchedule', 'action' => 'index'));
-Router::connect('/admin/schedule/:action/*', array('plugin' => false, 'controller' => 'DeliSchedule'));
+Router::connect('/admin/schedule/:action/*', array('controller' => 'DeliSchedule'));
 
+Router::connect('/admin/location', array('controller' => 'DeliLocation', 'action' => 'index'));
+Router::connect('/admin/location/:action/*', array('controller' => 'DeliLocation'));
 
+Router::connect('/admin/default-procedure', array('controller' => 'DeliDefaultLocationProcedure', 'action' => 'index'));
+Router::connect('/admin/default-procedure/:action/*', array('controller' => 'DeliDefaultLocationProcedure'));
+
+Router::connect('/admin/billings', array('controller' => 'DeliBilling', 'action' => 'index'));
+Router::connect('/admin/billings/:action/*', array('controller' => 'DeliBilling'));
+
+Router::connect('/admin/pages', array('controller' => 'DeliPage', 'action' => 'adminIndex'));
+Router::connect('/admin/pages/:action/*', array('controller' => 'DeliPage'));
+
+Router::connect('/doTracking', array('controller' => 'DeliFrontendBilling', 'action' => 'doTracking'));
 
 
 CakePlugin::routes();

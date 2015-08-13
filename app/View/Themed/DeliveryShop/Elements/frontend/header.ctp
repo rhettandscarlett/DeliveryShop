@@ -1,14 +1,10 @@
-<header class="main-header clearfix">
-  <div class="logo col-sm-3"><a href="/"><?php echo $this->Html->image('logo.png'); ?></a></div>
-
-  <div class="topbar">
-    <ul class="menu">
-      <li><a href="/about-us"><?php echo __('About Us') ?></a></li>
-      <li><a href="/contact"><?php echo __('Contact') ?></a></li>
-    </ul>
-  </div>
-  <!-- /.topbar -->
-  <div class="toplogo pull-right">
-
-  </div>
-</header>
+<div class="top_box">
+  <a class="logo" href="index.php">ptivn.com</a>
+  <div class="shou_C">
+    <?php if($this->Session->read('Config.language') == 'vie'): ?>
+      <a href="/multi-language/change/eng"><?php echo __("English"); ?></a>
+    <?php else :?>
+      <a href="/multi-language/change/vie"><?php echo __("Vietnamese"); ?></a>
+    <?php endif;?>
+</div>
+<div class="clear"></div>

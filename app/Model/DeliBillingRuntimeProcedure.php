@@ -38,15 +38,6 @@ class DeliBillingRuntimeProcedure extends AppModel {
             'message' => 'Please enter a valid number',
           ),
       ),
-    'duration' =>
-      array (
-        'decimal' =>
-          array (
-            'rule' => 'decimal',
-            'message' => 'Please enter a valid number',
-            'allowEmpty' => true,
-          ),
-      ),
   );
 
 } 

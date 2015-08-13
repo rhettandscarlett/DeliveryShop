@@ -16,8 +16,8 @@ echo $this->Form->create('DeliSchedule', array(
     <div class="row">
       <div class="col-md-9">
         <h1><i class="fa fa-bars"></i>
-          <?php if (isset($this->data['Delischedule']['id']) && $this->data['Delischedule']['id'] > 0): ?>
-            <?php echo __('Edit') ?>: <?= $this->data['Delischedule']['name'] ?>
+          <?php if (isset($this->data['DeliSchedule']['id']) && $this->data['DeliSchedule']['id'] > 0): ?>
+            <?php echo __('Edit') ?>: <?= $this->data['DeliSchedule']['name'] ?>
           <?php else: ?>
             <?php echo __('Add') ?>
           <?php endif; ?>

@@ -43,9 +43,9 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
                   <td><?php echo $data['DeliSchedule']['name']; ?></td>
                   <td>
                     <?php if($data['DeliSchedule']['activated']): ?>
-                      <div class="btn btn-success btn-sm"><?= __('Activated')?></div>
+                      <div class="text-success"><?= __('Activated')?></div>
                     <?php else: ?>
-                      <div class="btn btn-danger btn-sm"><?= __('Deactivated')?></div>
+                      <div class="text-danger"><?= __('Deactivated')?></div>
                     <?php endif;?>
 
                   </td>
