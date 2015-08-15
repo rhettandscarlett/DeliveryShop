@@ -9,6 +9,7 @@
 
 class DeliLocationController extends AppController {
   public $uses = array(
+    'DeliLocation',
     'DeliSchedule',
   );
 
@@ -19,7 +20,7 @@ class DeliLocationController extends AppController {
   }
 
   public function index() {
-    $dataList = $this->DeliLocation->find('all', array('order' => array('DeliLocation.order ASC', 'DeliSchedule.id ASC')));
+    $dataList = $this->DeliLocation->find('all', array('order' => array('DeliLocation.order ASC', 'DeliLocation.id ASC')));
     $this->set('dataList', $dataList);
   }
 
@@ -39,6 +40,16 @@ class DeliLocationController extends AppController {
 
     }
   }
+
+  public function delete($id) {
+    $this->DeliLocation->deleteLogic($id);
+    $this->Session->setFlash(__('Location #%s is deleted successfully', $id), 'flash/success');
+    $this->redirect(Router::url(array(
+        'controller' => 'DeliLocation',
+        'action'     => 'index'
+      )) . buildQueryString());
+  }
+
 
 
 } 

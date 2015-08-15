@@ -32,5 +32,15 @@ class DeliScheduleController extends AppController {
     }
   }
 
+  public function delete($id) {
+    $this->DeliSchedule->deleteLogic($id);
+    $this->Session->setFlash(__('Schedule #%s is deleted successfully', $id), 'flash/success');
+    $this->redirect(Router::url(array(
+        'controller' => 'DeliSchedule',
+        'action'     => 'index'
+      )) . buildQueryString());
+  }
+
+
 
 } 

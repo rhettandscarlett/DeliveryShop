@@ -123,6 +123,7 @@ Configure::write('USER_EXCLUDE_CONTROLLER', array(
   'controller' => array(
     'Test01Controller' => array('action1' => 1),
     'DeliPageController' => array(),
+    'DeliFrontendBillingController' => array(),
   ),
   'plugin' => array(
     'MultiLanguage' => array(

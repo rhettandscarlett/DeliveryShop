@@ -5828,3 +5828,231 @@ Request URL: /theme/DeliveryShop/css/m/t_bg.png
 Stack Trace:
 #0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-13 06:22:56 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-13 13:46:54 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-13 13:55:51 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'ptivn_root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /user/super-admin/login
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /Users/thangcest2/DeliveryShop/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3310): Model->setSource('user_admin')
+#5 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /Users/thangcest2/DeliveryShop/lib/Cake/View/Helper/FormHelper.php(199): Model->schema()
+#7 /Users/thangcest2/DeliveryShop/lib/Cake/View/Helper/FormHelper.php(451): FormHelper->_introspectModel('UserAdmin', 'fields')
+#8 /Users/thangcest2/DeliveryShop/app/View/Themed/DeliveryShop/Plugin/User/UserAdmin/login.ctp(15): FormHelper->create('UserAdmin', Array)
+#9 /Users/thangcest2/DeliveryShop/lib/Cake/View/View.php(931): include('/Users/thangces...')
+#10 /Users/thangcest2/DeliveryShop/lib/Cake/View/View.php(893): View->_evaluate('/Users/thangces...', Array)
+#11 /Users/thangcest2/DeliveryShop/lib/Cake/View/View.php(462): View->_render('/Users/thangces...')
+#12 /Users/thangcest2/DeliveryShop/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#13 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#14 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UserAdminController), Object(CakeRequest), Object(CakeResponse))
+#15 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-08-13 13:55:51 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-13 13:56:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'ptivn_root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /user/admin/login
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /Users/thangcest2/DeliveryShop/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3310): Model->setSource('user_role_right')
+#5 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /Users/thangcest2/DeliveryShop/app/Model/AppModel.php(49): Model->schema()
+#7 [internal function]: AppModel->beforeFind(Array)
+#8 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(246): call_user_func_array(Array, Array)
+#9 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2799): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2717): Model->buildQuery('all', Array)
+#11 /Users/thangcest2/DeliveryShop/app/Plugin/User/Model/UserRoleRight.php(50): Model->find('all', Array)
+#12 /Users/thangcest2/DeliveryShop/app/Plugin/User/Controller/Component/UserComponent.php(133): UserRoleRight->getRightByRole(1)
+#13 [internal function]: UserComponent->initialize(Object(UserController))
+#14 /Users/thangcest2/DeliveryShop/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#15 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#16 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#17 /Users/thangcest2/DeliveryShop/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#18 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#19 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UserController), Object(CakeRequest), Object(CakeResponse))
+#20 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#21 {main}
+2015-08-13 13:56:02 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-13 13:56:06 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'ptivn_root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /admin
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /Users/thangcest2/DeliveryShop/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3310): Model->setSource('user_role_right')
+#5 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /Users/thangcest2/DeliveryShop/app/Model/AppModel.php(49): Model->schema()
+#7 [internal function]: AppModel->beforeFind(Array)
+#8 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(246): call_user_func_array(Array, Array)
+#9 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2799): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2717): Model->buildQuery('all', Array)
+#11 /Users/thangcest2/DeliveryShop/app/Plugin/User/Model/UserRoleRight.php(50): Model->find('all', Array)
+#12 /Users/thangcest2/DeliveryShop/app/Plugin/User/Controller/Component/UserComponent.php(133): UserRoleRight->getRightByRole(1)
+#13 [internal function]: UserComponent->initialize(Object(DashBoardController))
+#14 /Users/thangcest2/DeliveryShop/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#15 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#16 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#17 /Users/thangcest2/DeliveryShop/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#18 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#19 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(DashBoardController), Object(CakeRequest), Object(CakeResponse))
+#20 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#21 {main}
+2015-08-14 05:42:28 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'ptivn_root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /admin
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /Users/thangcest2/DeliveryShop/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(3310): Model->setSource('user_role_right')
+#5 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#6 /Users/thangcest2/DeliveryShop/app/Model/AppModel.php(49): Model->schema()
+#7 [internal function]: AppModel->beforeFind(Array)
+#8 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(246): call_user_func_array(Array, Array)
+#9 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2799): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /Users/thangcest2/DeliveryShop/lib/Cake/Model/Model.php(2717): Model->buildQuery('all', Array)
+#11 /Users/thangcest2/DeliveryShop/app/Plugin/User/Model/UserRoleRight.php(50): Model->find('all', Array)
+#12 /Users/thangcest2/DeliveryShop/app/Plugin/User/Controller/Component/UserComponent.php(133): UserRoleRight->getRightByRole(1)
+#13 [internal function]: UserComponent->initialize(Object(DashBoardController))
+#14 /Users/thangcest2/DeliveryShop/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#15 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#16 /Users/thangcest2/DeliveryShop/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#17 /Users/thangcest2/DeliveryShop/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#18 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#19 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(DashBoardController), Object(CakeRequest), Object(CakeResponse))
+#20 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#21 {main}
+2015-08-14 11:10:01 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 06:46:39 Error: Fatal Error (1): Call to undefined function geoip_time_zone_by_country_and_region() in [/Users/thangcest2/DeliveryShop/app/Controller/DeliLocationController.php, line 28]
+2015-08-15 06:46:39 Error: [FatalErrorException] Call to undefined function geoip_time_zone_by_country_and_region()
+Request URL: /admin/location/edit
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/thangces...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-15 06:46:59 Error: Fatal Error (1): Call to undefined function geoip_time_zone_by_country_and_region() in [/Users/thangcest2/DeliveryShop/app/Controller/DeliLocationController.php, line 28]
+2015-08-15 06:46:59 Error: [FatalErrorException] Call to undefined function geoip_time_zone_by_country_and_region()
+Request URL: /admin/location/edit
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/thangces...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-15 06:47:01 Error: Fatal Error (1): Call to undefined function geoip_time_zone_by_country_and_region() in [/Users/thangcest2/DeliveryShop/app/Controller/DeliLocationController.php, line 28]
+2015-08-15 06:47:01 Error: [FatalErrorException] Call to undefined function geoip_time_zone_by_country_and_region()
+Request URL: /admin/location/edit
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Users/thangces...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#2 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Users/thangces...', 28, Array)
+#3 /Users/thangcest2/DeliveryShop/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-15 07:39:49 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 08:16:46 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-15 08:20:13 Error: [MissingActionException] Action CodeGeneratorController::index.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'CodeGeneratorController',
+  'action' => 'index.php',
+)
+Request URL: /CodeGenerator/index.php
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/thangcest2/DeliveryShop/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CodeGeneratorController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-08-15 08:20:13 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/DeliveryShop/css/m/t_bg.png
+Stack Trace:
+#0 /Users/thangcest2/DeliveryShop/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

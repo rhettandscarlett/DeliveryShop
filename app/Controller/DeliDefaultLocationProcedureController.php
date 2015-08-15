@@ -45,6 +45,16 @@ class DeliDefaultLocationProcedureController extends AppController {
     }
   }
 
+  public function delete($id) {
+    $this->DeliDefaultLocationProcedure->deleteLogic($id);
+    $this->Session->setFlash(__('Procedure #%s is deleted successfully', $id), 'flash/success');
+    $this->redirect(Router::url(array(
+        'controller' => 'DeliDefaultLocationProcedure',
+        'action'     => 'index'
+      )) . buildQueryString());
+  }
+
+
 
 
 } 

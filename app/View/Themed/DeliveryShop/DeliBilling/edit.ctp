@@ -58,7 +58,7 @@ echo $this->Form->create('DeliBilling', array(
             </div>
           </div>
           <?php echo $this->Form->input('init_time', array('label' => array('text' => __('Picked up Time')), 'value' => empty($this->data['DeliBilling']['init_time']) ? $defaultProcedure['DeliDefaultLocationProcedure']['time'] : $this->data['DeliBilling']['init_time'])); ?>
-          <?php echo $this->Form->input('estimate_days', array('options' => array(4=>4,5=>5,6=>6), 'label' => array('text' => __('Estimate Days')), 'default' => empty($this->data['DeliBilling']['estimate_date']) ? 4 : $this->data['DeliBilling']['estimate_date'])); ?>
+          <?php echo $this->Form->input('estimate_day', array('options' => array(4=>4,5=>5,6=>6), 'label' => array('text' => __('Estimate Days')), 'default' => empty($this->data['DeliBilling']['estimate_day']) ? 4 : $this->data['DeliBilling']['estimate_day'])); ?>
           <?php echo $this->Form->input('status', array('options' => Configure::read('DELI_TRANSIT_STATUS_LIST'), 'label' => array('text' => __('Status')))); ?>
 
         </div>

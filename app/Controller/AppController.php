@@ -90,7 +90,15 @@ class AppController extends Controller {
       "no_results_text" => __("No data"),
       "searching_text" => __("Searching...")
     );
-
+    $menuList = array(
+      'homepage' => __('HomePage'),
+      'tracking' => __('Tracking'),
+      'service' => __('Service'),
+      'introduce' => __('About Us'),
+      'contact' => __('Contact'),
+    );
+    $this->set('menuList', $menuList);
+    $this->set('currentPage', $this->params->url);
     $this->set('js', $js);
     $this->layout();
   }

@@ -10,50 +10,50 @@ class UserComponent extends Component {
     $controller->loggedUser = $controller->Session->read('loggedUser');
 
     if (is_null($controller->loggedUser)) {
-      $controller->Cookie->domain = env('HTTP_BASE');
-      $controller->Cookie->name = 'remember_me';
-      $cookie = $controller->Cookie->read('User');
-      if (!empty($cookie)) {
-        if ($cookie['model_class'] == 'UserAccount') {
-          $user_model = ClassRegistry::init('User.UserAccount');
-          $user = $user_model->find('first', array(
-            'conditions' => array(
-              'UserModel.email' => $cookie['email'],
-              'UserAccount.password' => $cookie['password'],
-              'UserModel.status' => USER_ACTIVE,
-            ),
-            'multiLanguageIsUsed' => false
-          ));
-          if ($user) {
-            $controller->loggedUser = new stdClass();
-            $controller->loggedUser->Admin = new stdClass();
-            $controller->loggedUser->Admin->id = 0;
-            unset($user['UserAccount']['password']);
-            $controller->loggedUser->User = arrayToObject($user['UserModel']);
-            $access_model = ClassRegistry::init('User.UserRoleAccess');
-            $controller->loggedUser->Role = Hash::combine($access_model->findByUserId($user['UserModel']['id']), 'UserRoleAccess.role_id', 'UserRoleAccess.role_id');
-            $controller->Session->write('loggedUser', $this->loggedUser);
-          }
-        } elseif ($cookie['model_class'] == 'UserAdmin') {
-          $admin_model = ClassRegistry::init('User.UserAdmin');
-          $admin = $admin_model->find('first', array(
-            'conditions' => array(
-              'UserAdmin.email' => $cookie['email'],
-              'UserAdmin.password' => $cookie['password'],
-              'UserAdmin.status' => USER_ADMIN_ACTIVE
-            ),
-            'multiLanguageIsUsed' => false
-          ));
-          if ($admin) {
-            $controller->loggedUser = new stdClass();
-            $controller->loggedUser->User = new stdClass();
-            $controller->loggedUser->User->id = 0;
-            unset($admin['UserAdmin']['password']);
-            $controller->loggedUser->Admin = arrayToObject($admin['UserAdmin']);
-            $controller->Session->write('loggedUser', $this->loggedUser);
-          }
-        }
-      }
+//      $controller->Cookie->domain = env('HTTP_BASE');
+//      $controller->Cookie->name = 'remember_me';
+//      $cookie = $controller->Cookie->read('User');
+//      if (!empty($cookie)) {
+//        if ($cookie['model_class'] == 'UserAccount') {
+//          $user_model = ClassRegistry::init('User.UserAccount');
+//          $user = $user_model->find('first', array(
+//            'conditions' => array(
+//              'UserModel.email' => $cookie['email'],
+//              'UserAccount.password' => $cookie['password'],
+//              'UserModel.status' => USER_ACTIVE,
+//            ),
+//            'multiLanguageIsUsed' => false
+//          ));
+//          if ($user) {
+//            $controller->loggedUser = new stdClass();
+//            $controller->loggedUser->Admin = new stdClass();
+//            $controller->loggedUser->Admin->id = 0;
+//            unset($user['UserAccount']['password']);
+//            $controller->loggedUser->User = arrayToObject($user['UserModel']);
+//            $access_model = ClassRegistry::init('User.UserRoleAccess');
+//            $controller->loggedUser->Role = Hash::combine($access_model->findByUserId($user['UserModel']['id']), 'UserRoleAccess.role_id', 'UserRoleAccess.role_id');
+//            $controller->Session->write('loggedUser', $this->loggedUser);
+//          }
+//        } elseif ($cookie['model_class'] == 'UserAdmin') {
+//          $admin_model = ClassRegistry::init('User.UserAdmin');
+//          $admin = $admin_model->find('first', array(
+//            'conditions' => array(
+//              'UserAdmin.email' => $cookie['email'],
+//              'UserAdmin.password' => $cookie['password'],
+//              'UserAdmin.status' => USER_ADMIN_ACTIVE
+//            ),
+//            'multiLanguageIsUsed' => false
+//          ));
+//          if ($admin) {
+//            $controller->loggedUser = new stdClass();
+//            $controller->loggedUser->User = new stdClass();
+//            $controller->loggedUser->User->id = 0;
+//            unset($admin['UserAdmin']['password']);
+//            $controller->loggedUser->Admin = arrayToObject($admin['UserAdmin']);
+//            $controller->Session->write('loggedUser', $this->loggedUser);
+//          }
+//        }
+//      }
     }
 
     if (empty($controller->loggedUser)) {

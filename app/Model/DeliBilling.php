@@ -48,26 +48,20 @@ class DeliBilling extends AppModel {
         ),
         'message' => 'Please enter a text no larger than 255 characters long',
       ),
+      'unique_bill_code' =>
+        array(
+          'rule'    =>
+            array(
+              0 => 'checkUnique',
+              1 =>
+                array(
+                  0 => 'bill_code',
+                ),
+            ),
+          'message' => 'Bill Code already exists',
+        )
     ),
-    'bill_name' => 
-    array (
-      'notNull' => 
-      array (
-        'rule' => 'notEmpty',
-        'required' => true,
-        'message' => 'This field cannot be left blank',
-      ),
-      'size' => 
-      array (
-        'rule' => 
-        array (
-          0 => 'maxLength',
-          1 => 255,
-        ),
-        'message' => 'Please enter a text no larger than 255 characters long',
-      ),
-    ),
-    'order' => 
+    'order' =>
     array (
       'numeric' => 
       array (

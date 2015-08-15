@@ -1,7 +1,5 @@
 <?php
 
-App::uses('DeliPageController', 'Controller');
-
 /**
  * @property DeliBilling $DeliBilling
  * @property DeliLocation $DeliLocation
@@ -9,7 +7,7 @@ App::uses('DeliPageController', 'Controller');
  * @property DeliSchedule $DeliSchedule
 */
 
-class DeliFrontendBillingController extends DeliPageController{
+class DeliFrontendBillingController extends AppController{
   public $uses = array(
     'DeliLocation',
     'DeliDefaultLocationProcedure',

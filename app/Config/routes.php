@@ -34,7 +34,7 @@ Router::connect('/tracking', array('controller' => 'DeliPage', 'action' => 'inde
 Router::connect('/service', array('controller' => 'DeliPage', 'action' => 'index', 'service'));
 Router::connect('/introduce', array('controller' => 'DeliPage', 'action' => 'index', 'introduce'));
 Router::connect('/contact', array('controller' => 'DeliPage', 'action' => 'index', 'contact'));
-Router::connect('/admin', array('controller' => 'Dashboard', 'action' => 'index'));
+Router::connect('/admin', array('controller' => 'DashBoard', 'action' => 'index'));
 
 Router::connect('/admin/schedule', array('controller' => 'DeliSchedule', 'action' => 'index'));
 Router::connect('/admin/schedule/:action/*', array('controller' => 'DeliSchedule'));
@@ -44,6 +44,9 @@ Router::connect('/admin/location/:action/*', array('controller' => 'DeliLocation
 
 Router::connect('/admin/default-procedure', array('controller' => 'DeliDefaultLocationProcedure', 'action' => 'index'));
 Router::connect('/admin/default-procedure/:action/*', array('controller' => 'DeliDefaultLocationProcedure'));
+
+Router::connect('/admin/runtime-procedure', array('controller' => 'DeliBillingRuntimeProcedure', 'action' => 'index'));
+Router::connect('/admin/runtime-procedure/:action/*', array('controller' => 'DeliBillingRuntimeProcedure'));
 
 Router::connect('/admin/billings', array('controller' => 'DeliBilling', 'action' => 'index'));
 Router::connect('/admin/billings/:action/*', array('controller' => 'DeliBilling'));

@@ -10,4 +10,4 @@ Configure::write('MultiLanguage.app_mapping_list', array(
   'vi' => 'vie',
 ));
 Configure::write('MultiLanguage.fallback', array('vie' => __('Vietnamese')));
-Configure::write('Config.language', 'vie');
+Configure::write('Config.language', 'eng');
