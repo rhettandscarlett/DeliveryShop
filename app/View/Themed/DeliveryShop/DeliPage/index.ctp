@@ -1,6 +1,6 @@
 <div class="jia_ge">
   <?= $this->Html->image('logistics.png') ?>
-  <div style="float:right; width:30%">
+  <div class="tracking-wrapping">
     <h2><?= __('Tracking Bill')?></h2>
     <p>
     </p>

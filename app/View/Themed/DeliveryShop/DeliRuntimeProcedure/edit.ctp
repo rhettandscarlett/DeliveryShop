@@ -1,5 +1,5 @@
 <?php
-echo $this->Form->create('DeliDefaultLocationProcedure', array(
+echo $this->Form->create('DeliRuntimeProcedure', array(
   'novalidate' => true,
   'inputDefaults' => array(
     'div' => 'form-group',
@@ -16,8 +16,8 @@ echo $this->Form->create('DeliDefaultLocationProcedure', array(
     <div class="row">
       <div class="col-md-9">
         <h1><i class="fa fa-bars"></i>
-          <?php if (isset($this->data['DeliDefaultLocationProcedure']['id']) && $this->data['DeliDefaultLocationProcedure']['id'] > 0): ?>
-            <?php echo __('Edit') ?>: <?= $this->data['DeliDefaultLocationProcedure']['name'] ?>
+          <?php if (isset($this->data['DeliRuntimeProcedure']['id']) && $this->data['DeliRuntimeProcedure']['id'] > 0): ?>
+            <?php echo __('Edit') ?>: <?= $this->data['DeliRuntimeProcedure']['name'] ?>
           <?php else: ?>
             <?php echo __('Add') ?>
           <?php endif; ?>
@@ -42,13 +42,6 @@ echo $this->Form->create('DeliDefaultLocationProcedure', array(
           </div>
           <?php echo $this->Form->input('location_id', array('options' => $locationList, 'label' => array('text' => __('In Location')))); ?>
           <?php echo $this->Form->input('name', array('label' => array('text' => __('Name')))); ?>
-
-          <div class="form-group">
-            <label class="col col-md-3 control-label text-left"><?php echo __('Visible when intransit ?'); ?></label>
-            <div class="col col-md-9">
-              <?php echo $this->Form->input('visible', array('checkboxDiv' => false, 'label' => false)); ?>
-            </div>
-          </div>
           <?php echo $this->Form->input('time', array('label' => array('text' => __('Time')))); ?>
           <?php echo $this->Form->input('plus_day', array('options' => $plusDay, 'label' => array('text' => __('Plus day to previous procedure')))); ?>
           <?php echo $this->Form->input('order', array('label' => array('text' => __('Order')))); ?>

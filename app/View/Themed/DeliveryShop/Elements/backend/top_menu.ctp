@@ -12,7 +12,8 @@
               <ul class="sub-menu" style="width: 164px;">
                 <li><a href="<?= Router::url(array('plugin' => false, 'controller' => 'DeliSchedule', 'action' => 'index')) ?>"><?php echo __("Schedules"); ?></a></li>
                 <li><a href="<?= Router::url(array('plugin' => false, 'controller' => 'DeliLocation', 'action' => 'index')) ?>"><?php echo __("Locations"); ?></a></li>
-                <li><a href="<?= Router::url(array('plugin' => false, 'controller' => 'DeliDefaultLocationProcedure', 'action' => 'index')) ?>"><?php echo __("Procedures"); ?></a></li>
+                <li><a href="<?= Router::url(array('plugin' => false, 'controller' => 'DeliDefaultLocationProcedure', 'action' => 'index')) ?>"><?php echo __("Default Procedures"); ?></a></li>
+                <li><a href="<?= Router::url(array('plugin' => false, 'controller' => 'DeliRuntimeProcedure', 'action' => 'index')) ?>"><?php echo __("Runtime Procedure"); ?></a></li>
               </ul>
             </li>
 
@@ -32,11 +33,13 @@
                     <li><a href="/multi-language/change/eng"><?php echo __("English"); ?></a></li>
                   </ul>
                 </li>
+
+                <li><a href="<?= Router::url(array('plugin' => 'System', 'controller' => 'CleanCache', 'action' => 'cleanCache')) ?>"><?php echo __("Clear Cache"); ?></a></li>
               </ul>
             </li>
-            <li><a href="#"><?php echo __("Runtime Procedure"); ?></a></li>
             <li><a href="#"><?php echo __("Account"); ?></a>
               <ul class="sub-menu" style="width: 164px;">
+                <li><a href="/user/account/profile"><?php echo __("Edit your profile"); ?></a></li>
                 <li><a href="/user/account/logout"><?php echo __("Logout"); ?></a></li>
               </ul>
             </li>

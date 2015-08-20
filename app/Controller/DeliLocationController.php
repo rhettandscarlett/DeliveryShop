@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @property DeliLocationController $DeliLocationController
  * @property DeliLocation $DeliLocation
  * @property DeliSchedule $DeliSchedule
  *
@@ -21,11 +20,13 @@ class DeliLocationController extends AppController {
 
   public function index() {
     $dataList = $this->DeliLocation->find('all', array('order' => array('DeliLocation.order ASC', 'DeliLocation.id ASC')));
-    $this->set('dataList', $dataList);
+    $allDataList = AppModel::generalCombine($dataList, 'DeliLocation', array('schedule_id' => '', 'id' => ''));
+    $this->set(compact('allDataList'));
   }
 
-  public function edit($id = 0) {
+  public function edit($scheduleId = 0, $id = 0) {
     $this->set('scheduleList', $this->DeliSchedule->find('list'));
+    $this->set('scheduleId', $scheduleId);
 
     if (empty($this->request->data)) {
       $this->request->data = $this->DeliLocation->findById($id);

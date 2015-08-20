@@ -40,7 +40,13 @@ echo $this->Form->create('DeliLocation', array(
               <label class="required"><?php echo __('Required Fields'); ?></label>
             </div>
           </div>
-          <?php echo $this->Form->input('schedule_id', array('options' => $scheduleList, 'label' => array('text' => __('In Schedule')))); ?>
+          <?php echo $this->Form->input('schedule_id', array('options' => $scheduleList, 'value' => $scheduleId ,'label' => array('text' => __('In Schedule')))); ?>
+          <div class="form-group">
+            <label class="col col-md-3 control-label text-left"><?php echo __('Is default for procedures ?'); ?></label>
+            <div class="col col-md-9">
+              <?php echo $this->Form->input('is_default', array('checkboxDiv' => false,'label' => false)); ?>
+            </div>
+          </div>
           <?php echo $this->Form->input('name', array('label' => array('text' => __('Name')))); ?>
           <?php echo $this->Form->input('timezone', array('options' => $listTimeZone, 'label' => array('text' => __('Time Zone')))); ?>
           <?php echo $this->Form->input('order', array('label' => array('text' => __('Order')))); ?>

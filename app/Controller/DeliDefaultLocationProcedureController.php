@@ -3,6 +3,7 @@
 /**
  * @property DeliDefaultLocationProcedureController $DeliDefaultLocationProcedureController
  * @property DeliDefaultLocationProcedure $DeliDefaultLocationProcedure
+ * @property DeliSchedule $DeliSchedule
  * @property DeliLocation $DeliLocation
  *
  */
@@ -10,21 +11,34 @@
 class DeliDefaultLocationProcedureController extends AppController {
 
   public $uses = array(
+    'DeliSchedule',
     'DeliLocation',
   );
 
   public function beforeFilter() {
     parent::beforeFilter();
     $this->modelClass = 'DeliDefaultLocationProcedure';
+    $this->set('locationList', $this->DeliLocation->find('list', array('conditions' => array('DeliLocation.is_default' => true))));
   }
 
   public function index() {
-    $dataList = $this->DeliDefaultLocationProcedure->find('all', array('order' => array('DeliDefaultLocationProcedure.order ASC', 'DeliLocation.order ASC')));
-    $this->set('dataList', $dataList);
+    $filterId = isset($_GET['filterId']) ? $_GET['filterId'] : 0;
+
+    $condition = array();
+    $condition['DeliDefaultLocationProcedure.deleted_time'] = null;
+    if ($filterId) {
+      $condition['DeliDefaultLocationProcedure.location_id'] = $filterId;
+    }
+    $js['curLink'] = Router::url(array('action' => 'index'), true);
+    if (is_array(Configure::read('Js'))) {
+      $js = Hash::merge($js, Configure::read('Js'));
+    }
+    Configure::write('Js', $js);
+    $dataList = $this->DeliDefaultLocationProcedure->find('all', array('conditions' => $condition, 'order' => array('DeliDefaultLocationProcedure.order ASC', 'DeliLocation.order ASC')));
+    $this->set(compact('dataList', 'filters', 'filterId'));
   }
 
   public function edit($id = 0) {
-    $this->set('locationList', $this->DeliLocation->find('list'));
     $plusDay = array();
     for ($i = 0; $i <= 10; $i++) {
       $plusDay[$i] = $i;

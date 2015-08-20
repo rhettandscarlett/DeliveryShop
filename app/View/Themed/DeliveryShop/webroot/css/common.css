@@ -1,16 +1,14 @@
 @charset "utf-8";
-/** 清除内外边距 **/
 body, h1, h2, h3, h4, h5, h6, hr, p,
-blockquote, /* structural elements 结构元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-pre, /* text formatting elements 文本格式元素 */
-form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-th, td, /* table elements 表格元素 */
-img/* img elements 图片元素 */
+blockquote,
+dl, dt, dd, ul, ol, li,
+pre,
+form, fieldset, legend, button, input, textarea,
+th, td,
+img
 {/*border:0;*/margin:0;padding:0;}
 .images{border:1px solid #EBEBEB;}
 em{font-style:normal;}
-/** 重置列表元素 **/
 ul, ol{list-style:none;}
 div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a{border:0; }
 body{  font-size:12px; color:#666; background-color: #EDF7F7 }
@@ -22,6 +20,117 @@ a, a span{font-size:12px; font-family:Tahoma, Arial, Helvetica, sans-serif;; dis
 a:link,a:visited{text-decoration:none; color:#666;}
 a:hover,a:active{text-decoration:none; color:#f60;}
 ul{margin:0;padding:0;}
+
+/*device queries*/
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
 
 .left{float:left}
 .right{float:right}
@@ -66,7 +175,7 @@ h1.newTitle{font-size:22px;font-weight:bold;padding:20px;text-align:center;}
 .nav_bg{height:42px; background:#4C6073; font-weight:bold; line-height:42px;}
 #navmenu{font-size:14px;position:relative;z-index:10; width:1000px; margin:0 auto; height:42px;}
 #navmenu ul {float:left;padding:0 2px 0 0;}
-#navmenu ul li {float:left;position:relative;margin-left: 20px;}
+#navmenu ul li {float:left;position:relative;margin-left: 10px;}
 #navmenu ul li a {color:#ffffff;float:left; display:block; width:108px; text-align:center;}
 #navmenu ul li a:hover, #navmenu ul li a.pointing{color:#fff; text-shadow: 1px 1px 1px #000000; border-radius:4px 4px 0 0; background:#FB9C18;filter:alpha(opacity=90);opacity:.9;-moz-opacity:.9;}
 
@@ -260,31 +369,6 @@ h1.newTitle{font-size:22px;font-weight:bold;padding:20px;text-align:center;}
 
 
 
-
-
-.pabanner{width:100%; height:320px; position:relative; margin:0 auto; overflow:hidden;}
-.pabanner .tab{ float:right; display:inline; margin-right:180px; position:relative; overflow:hidden; width:367px; height:45px;}
-.pabanner .tab ul{ width:1000px; height:45px; position:absolute; left:0; top:0;}
-.pabanner .tab ul li{ float:left; display:inline; width:84px; height:45px; margin-right:9px;}
-.pabanner .tab ul li a{ display:block; width:80px; height:41px; border:2px solid #fff;}
-.pabanner .tab ul li a.on{ border-color:#ff8106;}
-.pabanner .pabannerUl2 li a { display:block; margin:0 auto; width:1366px;}
-.pabanner .tab2{ position:absolute; right:22px; top:268px;}
-.pabanner .tab2 ul li{float:left; display:inline; margin-left:9px;}
-.pabanner .tab2 ul li a{ display:block; width:80px; height:41px; border:2px solid #fff; overflow:hidden;filter:alpha(opacity:60);opacity:0.60;}
-.pabanner .tab2 ul li a.on{border-color:#ff8106; width:80px;filter:alpha(opacity:100);opacity:1;}
-.pabanner .prev{width:155px; height:320px; display:block;position:absolute; top:0; left:0; cursor:pointer; background:url(../Images/about:blank);}
-.pabanner .prev_bg{ background:url(../Images/leftbtn.png) no-repeat; _background-image: none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/app_images/pingan/v30/indexnew_v1/leftbtn.png", sizingMethod="scale"); }
-.pabanner .next{width:155px; height:320px; display:block;position:absolute; top:0; right:0; cursor:pointer; background:url(../Images/about:blank);}
-.pabanner .next_bg{ background:url(../Images/rightbtn.png) no-repeat; _background-image: none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/app_images/pingan/v30/indexnew_v1/rightbtn.png", sizingMethod="scale"); }
-.pabanner .disabled{ display:none;}
-.pabannerUl2{ height: 320px;width: 2000px;position: absolute;margin: 0 auto;left: 50%;margin-left: -1000px;}
-.pabannerUl2 li{  cursor:pointer; width:2000px; height:320px;z-index:1; float:left; position: absolute; left:0; top:0;}
-.pabanner .tab2 ul li{border: 2px solid #FFFFFF; display: block; height: 41px; opacity: 0.6;filter:alpha(opacity:60);opacity:0.6; overflow: hidden; width: 80px; position:relative; cursor:pointer;}
-.pabanner .tab2 ul li.on { border-color: #FF8106; opacity: 1;filter:alpha(opacity:100);  width: 80px;}
-.pabanner .tab2 ul li.on_withe{border-color:#ffffff; width:80px;filter:alpha(opacity:100);opacity:1;}
-.estop  { background: url(../Images/t.gif) no-repeat; display: block; height: 41px;   left: 0px; position: absolute; top: 0px; width: 80px; z-index: 100;}
-
 .main-footer{
   margin-top: 50px;
 }
@@ -298,5 +382,80 @@ label.required:before {color: #b94a48;content: '* ';display:inline;}
 .radio label, .checkbox label{padding-left: 21px;}
 form .row{margin-bottom: 10px;}
 
+.processsub {
+  position: absolute;
+  width: 80%;
+  margin-top: -11px;
+  height: 22px;
+}
 
+.processsub:before, .processsub:after, .processsub .arr:after, .processsub .arr:before {
+  content: '';
+  display: block;
+}
 
+.processsub:before {
+  margin-top: 10px;
+  height: 2px;
+  background: #ccc;
+  left: 0;
+  right: 10px;
+  position: absolute;
+}
+
+.processsub:after {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 16px solid #ccc;
+  border-bottom: 6px solid transparent;
+  margin-top: 4px;
+}
+
+.processsub .arr {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #f5f5f5;
+  z-index: 1;
+}
+
+.processsub .arr:after {
+  border-right: 2px solid #A445D4;
+  border-top: 2px solid #A445D4;
+  position: absolute;
+  right: 0;
+  transform: rotate(45deg);
+  background: #f5f5f5;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+}
+
+.processsub .arr:before {
+  border: 2px solid #A445D4;
+  border-right: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  right: 7px;
+  position: absolute;
+}
+
+.quicksearch {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  line-height: 29px;
+}
+.quicksearch input {
+  padding-left: 4px;
+  width: 200px;
+}
+.quicksearch .btn-info {
+  font-size: 13px;
+}

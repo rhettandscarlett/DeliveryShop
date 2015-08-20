@@ -105,6 +105,7 @@ class UserAccountController extends AppController {
   }
 
   public function profile() {
+    $this->layout = 'admin';
     if ($this->loggedUser->User->id <= 0) {
       $this->Session->setFlash(__('Please login to continue'), 'flash/error');
       $this->redirect(Router::url(array('plugin' => 'User', 'controller' => 'UserAccount', 'action' => 'login')));

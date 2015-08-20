@@ -45,4 +45,22 @@ class DeliLocation extends AppModel {
       ),
     ),
   );
+
+  public function find($type = 'first', $query = array()) {
+    if ($type != 'list') {
+      return parent::find($type, $query);
+    } else {
+      $type = 'all';
+      $data = parent::find($type, $query);
+      $returnArr = array();
+      foreach ($data as $singleData) {
+        $returnArr[$singleData['DeliLocation']['id']] = $singleData['DeliSchedule']['name'] . ' >>>> ' . $singleData['DeliLocation']['name'];
+      }
+      return $returnArr;
+    }
+
+
+
+  }
+
 }

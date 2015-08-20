@@ -19,6 +19,6 @@ class CleanCacheController extends AppController {
       }
     }
     $this->Session->setFlash(__("All Cache cleaned!"), 'flash/success');
-    $this->redirect(Router::url("/", true));
+    $this->redirect(Router::url("/admin", true));
   }
 }

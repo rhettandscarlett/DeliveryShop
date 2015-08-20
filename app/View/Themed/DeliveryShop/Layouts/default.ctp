@@ -13,7 +13,7 @@
 <?php echo $this->Html->docType('html5'); ?>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php echo $this->Html->charset(); ?>
     <title><?= $title_for_layout ?></title>
 
@@ -29,7 +29,7 @@
       'jquery.ui',
       'bootstrap-datetimepicker',
       'File.file',
-      'common',
+      'deliveryshop',
     ));
     echo $this->fetch('css');
     ?>
@@ -50,16 +50,15 @@
   </head>
 
   <body>
+  <?php echo $this->element('frontend/header'); ?>
+  <section class="main-content">
     <div class="container">
       <div class="row">
-        <?php
-        echo $this->element('frontend/header');
-        echo $this->element('frontend/menu');
-        echo $this->fetch('content');
-        echo $this->element('frontend/footer');
-        ?>
+        <?php echo $this->fetch('content'); ?>
       </div>
     </div>
+  </section>
+  <?php echo $this->element('frontend/footer');?>
     <?php if (Configure::read('debug') > 1): ?>
       <div class="container">
         <div class="well well-sm">

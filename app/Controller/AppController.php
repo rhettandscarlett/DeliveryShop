@@ -1,5 +1,10 @@
 <?php
 
+
+/**
+ * @property DeliSchedule $DeliSchedule
+ */
+
 /**
  * Application level Controller
  *
@@ -27,6 +32,7 @@ App::uses('ConnectionManager', 'Model');
 App::uses('Sanitize', 'Utility');
 App::uses('SFRouter', 'Lib');
 App::uses('DeliLib', 'Lib');
+
 
 /**
  * Application Controller
@@ -74,10 +80,13 @@ class AppController extends Controller {
     'Paginator',
   );
   public $uses = array(
-    'File.FileModel'
+    'File.FileModel',
+    'DeliSchedule',
   );
   public $theme = "DeliveryShop";
   var $jsResponse = array();
+
+  public $scheduleList;
 
   function beforeFilter() {
     parent::beforeFilter();
@@ -99,6 +108,9 @@ class AppController extends Controller {
     );
     $this->set('menuList', $menuList);
     $this->set('currentPage', $this->params->url);
+    $this->scheduleList = $this->DeliSchedule->find('list');
+    $this->set('scheduleList', $this->scheduleList);
+
     $this->set('js', $js);
     $this->layout();
   }

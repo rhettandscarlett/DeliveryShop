@@ -9,7 +9,7 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
   <div class="row">
     <div class="col-md-9">
       <h1><i class="fa fa-bars"></i>
-        <?php echo __('Default Procedures for Location List') ?>
+        <?php echo __('Runtime Procedures List') ?>
       </h1>
     </div>
     <div class="col-md-3 text-right">
@@ -17,6 +17,7 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
     </div>
   </div>
 </div>
+
 <br>
 <div class="page-body">
   <div class="row">
@@ -53,11 +54,9 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
             <table cellpadding='0' cellspacing='0' class='table'>
               <thead>
               <tr>
-                <th width="20%"><?php echo __('Schedule') ?></th>
                 <th width="20%"><?php echo __('Location') ?></th>
                 <th width="20%"><?php echo __('Name') ?></th>
-                <th width="5%"><?php echo __('Present Time') ?></th>
-                <th width="5%"><?php echo __('Visible') ?></th>
+                <th width="20%"><?php echo __('Present Time') ?></th>
                 <th width="10%"><?php echo __('Plus days') ?></th>
                 <th width="10%"><?php echo __('Order') ?></th>
                 <th width="20%"><?php echo __('Actions'); ?></th>
@@ -68,16 +67,14 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
               foreach ($dataList as $data):
                 ?>
                 <tr>
-                  <td><?php echo $scheduleList[$data['DeliLocation']['schedule_id']]; ?></td>
                   <td><?php echo $data['DeliLocation']['name']; ?></td>
-                  <td><?php echo $data['DeliDefaultLocationProcedure']['name']; ?></td>
-                  <td><?php echo $data['DeliDefaultLocationProcedure']['time']; ?></td>
-                  <td><?php echo ($data['DeliDefaultLocationProcedure']['visible']) ? __('Yes') : __('No'); ?></td>
-                  <td><?php echo $data['DeliDefaultLocationProcedure']['plus_day']; ?></td>
-                  <td><?php echo $data['DeliDefaultLocationProcedure']['order']; ?></td>
+                  <td><?php echo $data['DeliRuntimeProcedure']['name']; ?></td>
+                  <td><?php echo $data['DeliRuntimeProcedure']['time']; ?></td>
+                  <td><?php echo $data['DeliRuntimeProcedure']['plus_day']; ?></td>
+                  <td><?php echo $data['DeliRuntimeProcedure']['order']; ?></td>
                   <td>
-                    <?= $this->Html->link('<i class="fa fa-edit"></i>', Router::url(array('action' => 'edit', $data['DeliDefaultLocationProcedure']['id'])).buildQueryString(), array('class' => 'btn btn-default btn-sm btn-edit', 'escape' => false)) ?>
-                    <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', Router::url(array('action' => 'delete', $data['DeliDefaultLocationProcedure']['id'])).buildQueryString() , array('class' => 'btn btn-default btn-delete btn-sm', 'escape' => false), __('Are you surely want to delete #%s ?', $data['DeliDefaultLocationProcedure']['id'])) ?>
+                    <?= $this->Html->link('<i class="fa fa-edit"></i>', Router::url(array('action' => 'edit', $data['DeliRuntimeProcedure']['id'])).buildQueryString(), array('class' => 'btn btn-default btn-sm btn-edit', 'escape' => false)) ?>
+                    <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', Router::url(array('action' => 'delete', $data['DeliRuntimeProcedure']['id'])).buildQueryString() , array('class' => 'btn btn-default btn-delete btn-sm', 'escape' => false), __('Are you surely want to delete #%s ?', $data['DeliRuntimeProcedure']['id'])) ?>
                   </td>
                 </tr>
               <?php endforeach; ?>

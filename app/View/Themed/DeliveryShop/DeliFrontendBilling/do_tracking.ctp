@@ -1,70 +1,5 @@
-<style>
-  .processsub {
-    position: absolute;
-    width: 80%;
-    margin-top: -11px;
-    height: 22px;
-  }
-
-  .processsub:before, .processsub:after, .processsub .arr:after, .processsub .arr:before {
-    content: '';
-    display: block;
-  }
-
-  .processsub:before {
-    margin-top: 10px;
-    height: 2px;
-    background: #ccc;
-    left: 0;
-    right: 10px;
-    position: absolute;
-  }
-
-  .processsub:after {
-    position: absolute;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;
-    border-left: 16px solid #ccc;
-    border-bottom: 6px solid transparent;
-    margin-top: 4px;
-  }
-
-  .processsub .arr {
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #f5f5f5;
-    z-index: 1;
-  }
-
-  .processsub .arr:after {
-    border-right: 2px solid #A445D4;
-    border-top: 2px solid #A445D4;
-    position: absolute;
-    right: 0;
-    transform: rotate(45deg);
-    background: #f5f5f5;
-    top: 3px;
-    width: 15px;
-    height: 15px;
-  }
-
-  .processsub .arr:before {
-    border: 2px solid #A445D4;
-    border-right: 0;
-    left: 0;
-    top: 0;
-    height: 100%;
-    right: 7px;
-    position: absolute;
-  }
-</style>
 <?php $this->HTML->script('tracking', array('inline' => false)); ?>
-<div class="jia_ge">
+<div class="resultHolder">
   <?php if (empty($billFound)): ?>
     <h3><?= __('Sorry, we found no result matches. Please contact our customer service if any question. Thank you !') ?></h3>
   <?php else: ?>
@@ -124,7 +59,7 @@
                           <thead>
                           <tr>
                             <th width="30%"><?php echo __('Detail') ?></th>
-                            <th width="30%"><?php echo __('Date (Day/Month/Year)') ?></th>
+                            <th width="30%"><?php echo __('Date (Day/Month/Date/Year)') ?></th>
                             <th width="30%"><?php echo __('Location') ?></th>
                             <th width="20%"><?php echo __('Local Time') ?></th>
                           </tr>

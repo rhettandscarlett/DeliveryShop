@@ -4,8 +4,11 @@
  * @property DeliBillingController $DeliBillingController
  * @property DeliSchedule $DeliSchedule
  * @property DeliBilling $DeliBilling
+ * @property DeliLocation $DeliLocation
  * @property DeliDefaultLocationProcedure $DeliDefaultLocationProcedure
  * @property DeliBillingRuntimeProcedure $DeliBillingRuntimeProcedure
+ * @property DeliRuntimeProcedure $DeliRuntimeProcedure
+ * @property DeliBillingRuntimeLocation $DeliBillingRuntimeLocation
  *
  */
 class DeliBillingController extends AppController {
@@ -14,15 +17,16 @@ class DeliBillingController extends AppController {
     'DeliSchedule',
     'DeliDefaultLocationProcedure',
     'DeliBillingRuntimeProcedure',
+    'DeliRuntimeProcedure',
+    'DeliBillingRuntimeLocation',
+    'DeliLocation',
   );
-
-  public $scheduleList;
 
   public function beforeFilter() {
     parent::beforeFilter();
     $this->modelClass = 'DeliBilling';
-    $this->scheduleList = $this->DeliSchedule->find('list');
-    $this->set('scheduleList', $this->scheduleList);
+    $transitStatusList = Configure::read('DELI_TRANSIT_STATUS_LIST');
+    $this->set('transitStatusList', $transitStatusList);
   }
 
   public function index() {
@@ -35,14 +39,26 @@ class DeliBillingController extends AppController {
     $defaultProcedure = $this->DeliDefaultLocationProcedure->getDefaultProcedure($scheduleId);
     if (empty($defaultProcedure)) {
       $this->Session->setFlash(__('Schedule <b>%s</b> has no procedure to work.', $this->scheduleList[$scheduleId]), 'flash/error');
-      $this->redirect(Router::url(array(
-          'controller' => 'DeliBilling',
-          'action'     => 'index'
-        )) . buildQueryString());
+      $this->redirect(Router::url(array('controller' => 'DeliBilling','action'     => 'index')) . buildQueryString());
     }
-    $this->set(compact('defaultProcedure', 'scheduleId'));
+    $attachLocations = $this->DeliLocation->find('list', array('conditions' => array(
+          'DeliLocation.schedule_id' => $scheduleId,
+          'DeliLocation.is_default' => false,
+        )
+      )
+    );
+    $this->set(compact('defaultProcedure', 'scheduleId', 'attachLocations'));
 
     if (empty($this->request->data)) {
+      $this->DeliBilling->bindModel(array(
+        'hasOne' => array(
+          'DeliBillingRuntimeLocation' => array(
+            'className' => 'DeliBillingRuntimeLocation',
+            'foreignKey' => 'billing_id',
+            'conditions' => array('DeliBillingRuntimeLocation.deleted_time IS NULL')
+          )
+        )
+      ));
       $this->request->data = $this->DeliBilling->findById($id);
     } else {
       if (!empty($this->request->data['DeliBilling']['picked_up_date'])) {
@@ -53,6 +69,18 @@ class DeliBillingController extends AppController {
       if (!$this->DeliBilling->save()) {
         $this->Session->setFlash(__('Cannot save your data'), 'flash/error');
       } else {
+        if (!empty($this->request->data['DeliBillingRuntimeLocation']['location_id'])) {
+          $storedLocation = $this->DeliBillingRuntimeLocation->findByBillingId($this->DeliBilling->id);
+          $saving = array('billing_id' => $this->DeliBilling->id);
+          if (!empty($storedLocation)) {
+            $saving['id'] = $storedLocation['DeliBillingRuntimeLocation']['id'];
+          }
+          $saving['location_id'] = $this->request->data['DeliBillingRuntimeLocation']['location_id'];
+          $this->DeliBillingRuntimeLocation->save($saving, false);
+        } else {
+          $this->DeliBillingRuntimeLocation->deleteLogic(null, array('DeliBillingRuntimeLocation.billing_id' => $this->DeliBilling->id));
+        }
+
         $this->Session->setFlash(__('Your data is saved successfully'), 'flash/success');
         $this->redirect(Router::url(array(
           'controller' => 'DeliBilling',
