@@ -3,6 +3,7 @@ $estimateDays = array();
 for ($i = 0; $i <= 10; $i++) {
   $estimateDays[] = $i;
 }
+
 $this->HTML->script('billing', array('inline' => false));
 echo $this->Form->create('DeliBilling', array(
   'novalidate' => true,
@@ -64,8 +65,29 @@ echo $this->Form->create('DeliBilling', array(
           <?php echo $this->Form->input('init_time', array('label' => array('text' => __('Picked up Time')), 'value' => empty($this->data['DeliBilling']['init_time']) ? $defaultProcedure['DeliDefaultLocationProcedure']['time'] : $this->data['DeliBilling']['init_time'])); ?>
           <?php echo $this->Form->input('estimate_day', array('options' => $estimateDays, 'label' => array('text' => __('Estimate Days')), 'default' => empty($this->data['DeliBilling']['estimate_day']) ? 4 : $this->data['DeliBilling']['estimate_day'])); ?>
           <?php echo $this->Form->input('status', array('options' => $transitStatusList, 'label' => array('text' => __('Status')))); ?>
-          <?php echo $this->Form->input('DeliBillingRuntimeLocation.location_id', array('options' => $attachLocations, 'default' => !empty($this->data['DeliBillingRuntimeLocation']['location_id']) ? $this->data['DeliBillingRuntimeLocation']['location_id'] : null ,'empty' => __('Please choose one') ,'label' => array('text' => __('Location Set For Delivered')))); ?>
-
+          <div class="form-group">
+            <label class="col col-md-3 control-label text-left"><?php echo __('Add Procedures for Delivered Location:'); ?></label>
+            <div class="col col-md-9">
+              <?php echo $this->Form->input('DeliBillingRuntimeLocation.location_id', array('options' => $attachLocations, 'default' => !empty($this->data['DeliBillingRuntimeLocation']['location_id']) ? $this->data['DeliBillingRuntimeLocation']['location_id'] : null ,'empty' => __('Please choose one') ,'label' => false)); ?>
+              <br>
+              <div><?= __('Runtime Procedure List')?></div>
+              <?php foreach ($attachLocationsData as $locationId => $listProcedureData): ?>
+                <div class="selectedHolder selectedHolder<?= $locationId ?> <?= ($locationId == $this->data['DeliBillingRuntimeLocation']['location_id']) ? '' : 'hidden'?> " style="padding: 10px;">
+                  <?php foreach($listProcedureData as $procedureData): ?>
+                    <?php $stored = in_array($procedureData['id'], array_keys($storedRuntimePros));?>
+                    <?php $checked = ($stored) ? 'checked' : '' ?>
+                    <?php echo $this->Form->input('DeliBillingRuntimeProcedure.' . $procedureData['id'] . '.id', array('type' => 'hidden', 'value' => $stored ? $storedRuntimePros[$procedureData['id']] : '')); ?>
+                    <?php echo $this->Form->input('DeliBillingRuntimeProcedure.' . $procedureData['id'] . '.runtime_procedure_id', array($checked, 'value' => $procedureData['id'], 'data-id' => $procedureData['id'],'type' => 'checkbox', 'div' => false, 'class' => 'rtProcedureItem' ,'wrapInput' => false ,'label' => array('class' => 'col col-md-6 control-label text-left', 'text' => $procedureData['name']))); ?>
+                    <br>
+                    <div class="detailHolder detailHolder<?= $procedureData['id'] ?> <?= $stored ? '' : 'hidden' ?>">
+                      <?php echo $this->Form->input('DeliBillingRuntimeProcedure.' . $procedureData['id'] . '.time', array('value' => $stored ? $storedRuntimeProsData[$storedRuntimePros[$procedureData['id']]]['time'] : '', 'type' => 'text', 'wrapInput' => 'col col-md-3','label' => array('text' => __('Local Time')))); ?>
+                      <?php echo $this->Form->input('DeliBillingRuntimeProcedure.' . $procedureData['id'] . '.plus_day', array('value' => $stored ? $storedRuntimeProsData[$storedRuntimePros[$procedureData['id']]]['plus_day'] : 0, 'options' => $plusDay,'wrapInput' => 'col col-md-3','label' => array('text' => __('Plus day')))); ?>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
+              <?php endforeach;?>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -3,13 +3,14 @@
 /**
  * @property DeliPageController $DeliPageController
  * @property DeliPage $DeliPage
+ * @property ContactForm $ContactForm
  * @property DeliDefaultLocationProcedure $DeliDefaultLocationProcedure
  *
  */
 class DeliPageController extends AppController {
 
   public $uses = array(
-
+    'ContactForm',
   );
 
   public $menuList = array();
@@ -30,6 +31,23 @@ class DeliPageController extends AppController {
 
   public function index($page = 'index') {
     $this->render($page);
+  }
+
+  public function contact() {
+    App::uses('CakeEmail', 'Network/Email');
+    if (!empty($this->request->data)) {
+      $this->ContactForm->set($this->request->data);
+      if ($this->ContactForm->validates()) {
+        $Email = new CakeEmail();
+        $Email->config('gmail');
+        $Email->from(array($this->request->data['ContactForm']['email'] => __('PTI Express - ptivn.com - Contact Email')));
+        $Email->to('thangcest2@gmail.com');
+        $Email->subject($this->request->data['ContactForm']['title']);
+        $Email->send($this->request->data['ContactForm']['content']);
+        $this->Session->setFlash(__('Thanks for contacting us.'), 'flash/success');
+      }
+    }
+
   }
 
   public function adminIndex() {

@@ -5,6 +5,7 @@
  * @property DeliLocation $DeliLocation
  * @property DeliDefaultLocationProcedure $DeliDefaultLocationProcedure
  * @property DeliSchedule $DeliSchedule
+ * @property ContactForm $ContactForm
  * @property DeliRuntimeProcedure $DeliRuntimeProcedure
  * @property DeliBillingRuntimeLocation $DeliBillingRuntimeLocation
  * @property DeliBillingRuntimeProcedure $DeliBillingRuntimeProcedure
@@ -17,6 +18,7 @@ class DeliFrontendBillingController extends AppController {
     'DeliRuntimeProcedure',
     'DeliBillingRuntimeLocation',
     'DeliBillingRuntimeProcedure',
+    'ContactForm',
   );
 
   public $listTimeZone = array();
@@ -72,22 +74,23 @@ class DeliFrontendBillingController extends AppController {
 
         $deliveredLocation = $this->DeliBillingRuntimeLocation->findByBillingId($bill['DeliBilling']['id']);
         if (!empty($deliveredLocation) && !empty($deliveredLocation['DeliBillingRuntimeLocation']['location_id'])) {
-          $runtimeLocationProcedures = $this->DeliRuntimeProcedure->findAllByLocationId($deliveredLocation['DeliLocation']['id']);
-          if (!empty($runtimeLocationProcedures)) {
+          $runtimeProcedures = $this->DeliBillingRuntimeProcedure->findAllByBillingId($bill['DeliBilling']['id']);
+          if (!empty($runtimeProcedures)) {
             date_default_timezone_set($this->listTimeZone[$deliveredLocation['DeliLocation']['timezone']]);
             $localTime  = date('Y-m-d H:i:s', time());
-            foreach ($runtimeLocationProcedures as $pId => &$procudure) {
-              $dayPlus += (int)$procudure['DeliRuntimeProcedure']['plus_day'];
-              $procudureTime = $bill['DeliBilling']['picked_up_date'] . ' ' . $procudure['DeliRuntimeProcedure']['time'];
+            foreach ($runtimeProcedures as $pId => &$procudure) {
+              $dayPlus += (int)$procudure['DeliBillingRuntimeProcedure']['plus_day'];
+              $procudureTime = $bill['DeliBilling']['picked_up_date'] . ' ' . $procudure['DeliBillingRuntimeProcedure']['time'];
               $procudureTime = date('Y-m-d H:i:s', strtotime($procudureTime . ' +' . $dayPlus . ' day'));
               if ($localTime < $procudureTime) {
-                unset($runtimeLocationProcedures[$pId]);
+                unset($runtimeProcedures[$pId]);
               } else {
-                $procudure['DeliRuntimeProcedure']['realtime'] = CakeTime::nice($procudureTime);
+                $procudure['DeliBillingRuntimeProcedure']['realtime'] = CakeTime::nice($procudureTime);
+                $procudure['DeliBillingRuntimeProcedure']['name'] = $procudure['DeliRuntimeProcedure']['name'];
               }
             }
 
-            $deliveredLocation['DeliDefaultLocationProcedure'] = Hash::combine($runtimeLocationProcedures, '{n}.DeliRuntimeProcedure.id', '{n}.DeliRuntimeProcedure');
+            $deliveredLocation['DeliDefaultLocationProcedure'] = Hash::combine($runtimeProcedures, '{n}.DeliBillingRuntimeProcedure.id', '{n}.DeliBillingRuntimeProcedure');
             $bill['DeliLocation'][]                   = $deliveredLocation;
           }
         }
@@ -97,5 +100,4 @@ class DeliFrontendBillingController extends AppController {
     }
 
   }
-
 }

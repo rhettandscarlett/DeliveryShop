@@ -29,11 +29,12 @@
  */
 
 Router::connect('/', array('controller' => 'DeliPage', 'action' => 'index'));
-Router::connect('/homepage', array('controller' => 'DeliPage', 'action' => 'index', 'homepage'));
-Router::connect('/tracking', array('controller' => 'DeliPage', 'action' => 'index', 'tracking'));
-Router::connect('/service', array('controller' => 'DeliPage', 'action' => 'index', 'service'));
-Router::connect('/introduce', array('controller' => 'DeliPage', 'action' => 'index', 'introduce'));
-Router::connect('/contact', array('controller' => 'DeliPage', 'action' => 'index', 'contact'));
+Router::connect('/page/:action/*', array('controller' => 'DeliPage'));
+Router::connect('/homepage', array('controller' => 'DeliPage', 'action' => 'homepage'));
+Router::connect('/tracking', array('controller' => 'DeliPage', 'action' => 'tracking'));
+Router::connect('/service', array('controller' => 'DeliPage', 'action' => 'service'));
+Router::connect('/introduce', array('controller' => 'DeliPage', 'action' => 'introduce'));
+//Router::connect('/contact', array('controller' => 'DeliPage', 'action' => 'index', 'contact'));
 Router::connect('/admin', array('controller' => 'DashBoard', 'action' => 'index'));
 
 Router::connect('/admin/schedule', array('controller' => 'DeliSchedule', 'action' => 'index'));
@@ -51,10 +52,8 @@ Router::connect('/admin/runtime-procedure/:action/*', array('controller' => 'Del
 Router::connect('/admin/billings', array('controller' => 'DeliBilling', 'action' => 'index'));
 Router::connect('/admin/billings/:action/*', array('controller' => 'DeliBilling'));
 
-Router::connect('/admin/pages', array('controller' => 'DeliPage', 'action' => 'adminIndex'));
-Router::connect('/admin/pages/:action/*', array('controller' => 'DeliPage'));
-
 Router::connect('/doTracking', array('controller' => 'DeliFrontendBilling', 'action' => 'doTracking'));
+Router::connect('/sendContact', array('controller' => 'DeliFrontendBilling', 'action' => 'sendContact'));
 
 
 CakePlugin::routes();

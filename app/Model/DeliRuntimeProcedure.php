@@ -58,27 +58,6 @@ class DeliRuntimeProcedure extends AppModel {
         'allowEmpty' => true,
       ),
     ),
-    'time' => 
-    array (
-      'size' => 
-      array (
-        'rule' => 
-        array (
-          0 => 'maxLength',
-          1 => 255,
-        ),
-        'message' => 'Please enter a text no larger than 255 characters long',
-        'allowEmpty' => true,
-      ),
-    ),
-    'plus_day' => 
-    array (
-      'numeric' => 
-      array (
-        'rule' => 'numeric',
-        'message' => 'Please enter a valid number',
-        'allowEmpty' => true,
-      ),
-    ),
+
   );
 }

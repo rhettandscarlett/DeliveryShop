@@ -42,8 +42,6 @@ echo $this->Form->create('DeliRuntimeProcedure', array(
           </div>
           <?php echo $this->Form->input('location_id', array('options' => $locationList, 'label' => array('text' => __('In Location')))); ?>
           <?php echo $this->Form->input('name', array('label' => array('text' => __('Name')))); ?>
-          <?php echo $this->Form->input('time', array('label' => array('text' => __('Time')))); ?>
-          <?php echo $this->Form->input('plus_day', array('options' => $plusDay, 'label' => array('text' => __('Plus day to previous procedure')))); ?>
           <?php echo $this->Form->input('order', array('label' => array('text' => __('Order')))); ?>
         </div>
       </div>

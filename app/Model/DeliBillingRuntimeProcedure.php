@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
 
 class DeliBillingRuntimeProcedure extends AppModel {
 
-  var $useTable = 'deli_default_location_procedure';
+  var $useTable = 'deli_billing_runtime_procedure';
   var $multiLanguage = null;
 
   public $belongsTo = array (
@@ -13,10 +13,10 @@ class DeliBillingRuntimeProcedure extends AppModel {
         'className' => 'DeliBilling',
         'foreignKey' => 'billing_id',
       ),
-    'DeliDefaultLocationProcedure' =>
+    'DeliRuntimeProcedure' =>
       array (
-        'className' => 'DeliDefaultLocationProcedure',
-        'foreignKey' => 'default_location_procedure_id',
+        'className' => 'DeliRuntimeProcedure',
+        'foreignKey' => 'runtime_procedure_id',
       ),
   );
 
@@ -30,7 +30,7 @@ class DeliBillingRuntimeProcedure extends AppModel {
             'message' => 'Please enter a valid number',
           ),
       ),
-    'default_location_procedure_id' =>
+    'runtime_procedure_id' =>
       array (
         'numeric' =>
           array (

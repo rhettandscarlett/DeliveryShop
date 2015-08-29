@@ -159,3 +159,20 @@ alter table deli_location add `is_default` boolean default 1 after `schedule_id`
 
 # sunday, 16/08/2015
 alter table `deli_runtime_procedure` add visible boolean default 0 after `name`;
+
+# sunday, 23/08/2015
+alter table deli_billing_runtime_procedure drop foreign key `runtime_procedure_to_default_location_procedure`;
+alter table deli_billing_runtime_procedure drop column `default_location_procedure_id`;
+alter table deli_billing_runtime_procedure add column `runtime_procedure_id` int (11) unsigned after billing_id;
+alter table deli_billing_runtime_procedure ADD CONSTRAINT `billing_to_runtime_location_procedure` FOREIGN KEY (`runtime_procedure_id`) REFERENCES deli_runtime_procedure(`id`);
+alter table deli_billing_runtime_procedure add `plus_day` varchar(255) default 0 after `time`;
+
+
+# Saturday, 29/08/2015
+INSERT INTO `user_role_right` (`role_id`, `plugin`, `controller`, `action`, `description`, `created_time`, `updated_time`, `deleted_time`)
+VALUES
+  (3, 'MultiLanguage', NULL, NULL, NULL, NULL, NULL, NULL);
+
+alter table deli_runtime_procedure drop column `visible`;
+alter table deli_runtime_procedure drop column `time`;
+alter table deli_runtime_procedure drop column `plus_day`;

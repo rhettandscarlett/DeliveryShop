@@ -36,6 +36,13 @@
  *
  */
 class EmailConfig {
+  public $gmail = array(
+    'host' => 'ssl://smtp.gmail.com',
+    'port' => 465,
+    'username' => 'thangcest2@gmail.com',
+    'password' => '2Aducthang',
+    'transport' => 'Smtp'
+  );
 
 	public $default = array(
 		'transport' => 'Mail',

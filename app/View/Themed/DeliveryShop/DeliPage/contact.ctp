@@ -10,10 +10,10 @@
 
 <?php
 echo $this->Form->create('ContactForm', array(
-  'url' => '',
+  'url' => Router::url(array('plugin' => false, 'controller' => 'DeliPage', 'action' => 'contact')),
   'novalidate' => true,
   'inputDefaults' => array(
-    'div' => 'form-group required',
+    'div' => 'form-group',
     'label' => array(
       'class' => 'col col-md-3 control-label text-left'
     ),
@@ -36,11 +36,11 @@ echo $this->Form->create('ContactForm', array(
             <h2><label><span><?= __('Contact For Services')?></span></label></h2>
           </div>
         </div>
-        <?php echo $this->Form->input('fullname', array('label' => array('text' => __('Full Name')))); ?>
-        <?php echo $this->Form->input('phone', array('label' => array('text' => __('Phone')))); ?>
-        <?php echo $this->Form->input('title', array('label' => array('text' => __('Title')))); ?>
-        <?php echo $this->Form->input('email', array('label' => array('text' => __('Email')))); ?>
-        <?php echo $this->Form->input('content', array('type' => 'textarea', 'style' => 'min-height:200px;', 'label' => array('text' => __('Content')))); ?>
+        <?php echo $this->Form->input('ContactForm.fullname', array('label' => array('text' => __('Full Name')))); ?>
+        <?php echo $this->Form->input('ContactForm.phone', array('label' => array('text' => __('Phone')))); ?>
+        <?php echo $this->Form->input('ContactForm.title', array('label' => array('text' => __('Title')))); ?>
+        <?php echo $this->Form->input('ContactForm.email', array('label' => array('text' => __('Email')))); ?>
+        <?php echo $this->Form->input('ContactForm.content', array('type' => 'textarea', 'style' => 'min-height:200px;', 'label' => array('text' => __('Content')))); ?>
         <?php echo $this->Form->button(__('Submit'), array('class' => 'btn btn-primary pull-right', 'type' => 'submit', 'id' => 'btn-submit', 'escape' => false)); ?>
       </div>
     </div>

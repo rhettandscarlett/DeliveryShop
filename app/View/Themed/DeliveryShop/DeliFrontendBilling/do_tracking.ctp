@@ -67,14 +67,12 @@
                           </thead>
                           <tbody>
                           <?php foreach (array_reverse($location['DeliDefaultLocationProcedure']) as $data): ?>
-                            <?php if ($data['visible'] == true || ($bill['DeliBilling']['status'] == DELI_TRANSIT_STATUS_DELIVERED)): ?>
-                              <tr>
-                                <td><?php echo $data['name']; ?></td>
-                                <td><?php echo $data['realtime']; ?></td>
-                                <td><?php echo $location['DeliLocation']['name']; ?></td>
-                                <td><?php echo $data['time']; ?></td>
-                              </tr>
-                            <?php endif; ?>
+                            <tr>
+                              <td><?php echo $data['name']; ?></td>
+                              <td><?php echo $data['realtime']; ?></td>
+                              <td><?php echo $location['DeliLocation']['name']; ?></td>
+                              <td><?php echo $data['time']; ?></td>
+                            </tr>
                           <?php endforeach; ?>
                           </tbody>
                         </table>

@@ -56,8 +56,6 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
               <tr>
                 <th width="20%"><?php echo __('Location') ?></th>
                 <th width="20%"><?php echo __('Name') ?></th>
-                <th width="20%"><?php echo __('Present Time') ?></th>
-                <th width="10%"><?php echo __('Plus days') ?></th>
                 <th width="10%"><?php echo __('Order') ?></th>
                 <th width="20%"><?php echo __('Actions'); ?></th>
               </tr>
@@ -69,8 +67,6 @@ $this->HTML->css('dataTables.bootstrap', array('inline' => false));
                 <tr>
                   <td><?php echo $data['DeliLocation']['name']; ?></td>
                   <td><?php echo $data['DeliRuntimeProcedure']['name']; ?></td>
-                  <td><?php echo $data['DeliRuntimeProcedure']['time']; ?></td>
-                  <td><?php echo $data['DeliRuntimeProcedure']['plus_day']; ?></td>
                   <td><?php echo $data['DeliRuntimeProcedure']['order']; ?></td>
                   <td>
                     <?= $this->Html->link('<i class="fa fa-edit"></i>', Router::url(array('action' => 'edit', $data['DeliRuntimeProcedure']['id'])).buildQueryString(), array('class' => 'btn btn-default btn-sm btn-edit', 'escape' => false)) ?>
