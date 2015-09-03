@@ -108,26 +108,33 @@ class DeliBillingController extends AppController {
           $saving = array('billing_id' => $this->DeliBilling->id);
           if (!empty($storedLocation)) {
             $saving['id'] = $storedLocation['DeliBillingRuntimeLocation']['id'];
-            if ($this->request->data['DeliBillingRuntimeLocation']['location_id'] !== $saving['id']) {
+            if ($this->request->data['DeliBillingRuntimeLocation']['location_id'] !== $storedLocation['DeliBillingRuntimeLocation']['location_id']) {
               $this->DeliBillingRuntimeProcedure->deleteLogic(null, array('DeliBillingRuntimeProcedure.billing_id' => $this->DeliBilling->id));
             }
           }
           $saving['location_id'] = $this->request->data['DeliBillingRuntimeLocation']['location_id'];
           $this->DeliBillingRuntimeLocation->save($saving, false);
-
           if (!empty($this->request->data['DeliBillingRuntimeProcedure'])) {
-            $savingRuntimePros = array();
+            $savingRuntimePros = $storedRequestIds = array();
             foreach ($this->request->data['DeliBillingRuntimeProcedure'] as $runtimeProData) {
-              if ($runtimeProData['runtime_procedure_id'] > 0) {
-                $savingRuntimePros[$runtimeProData['id']] = $runtimeProData;
-                $savingRuntimePros[$runtimeProData['id']]['billing_id'] = $this->DeliBilling->id;
+              if ((int)$runtimeProData['runtime_procedure_id'] > 0) {
+                $temp = $runtimeProData;
+                $temp['billing_id'] = $this->DeliBilling->id;
+                if (empty($runtimeProData['id'])) {
+                  unset($temp['id']);
+                } else {
+                  $storedRequestIds[] = $runtimeProData['id'];
+                }
+                $savingRuntimePros[] = $temp;
               }
             }
+
             foreach($storedRuntimePros as $storedRuntimeProId) {
-              if (!in_array($storedRuntimeProId, array_keys($savingRuntimePros))) {
-                $this->DeliBillingRuntimeProcedure->deleteLogic(null, array('DeliBillingRuntimeProcedure.id' => $storedRuntimeProId));
+              if (!in_array($storedRuntimeProId, $storedRequestIds)) {
+                $this->DeliBillingRuntimeProcedure->deleteLogic($storedRuntimeProId);
               }
             }
+
             $this->DeliBillingRuntimeProcedure->saveMany($savingRuntimePros);
           } else {
             $this->DeliBillingRuntimeProcedure->deleteLogic(null, array('DeliBillingRuntimeProcedure.billing_id' => $this->DeliBilling->id));
