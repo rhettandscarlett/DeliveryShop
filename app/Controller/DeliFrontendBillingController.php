@@ -74,7 +74,7 @@ class DeliFrontendBillingController extends AppController {
 
         $deliveredLocation = $this->DeliBillingRuntimeLocation->findByBillingId($bill['DeliBilling']['id']);
         if (!empty($deliveredLocation) && !empty($deliveredLocation['DeliBillingRuntimeLocation']['location_id'])) {
-          $runtimeProcedures = $this->DeliBillingRuntimeProcedure->findAllByBillingId($bill['DeliBilling']['id']);
+          $runtimeProcedures = $this->DeliBillingRuntimeProcedure->find('all', array('conditions' => array('DeliBillingRuntimeProcedure.billing_id' => $bill['DeliBilling']['id']), 'order' => 'DeliRuntimeProcedure.order ASC'));
           if (!empty($runtimeProcedures)) {
             date_default_timezone_set($this->listTimeZone[$deliveredLocation['DeliLocation']['timezone']]);
             $localTime  = date('Y-m-d H:i:s', time());
