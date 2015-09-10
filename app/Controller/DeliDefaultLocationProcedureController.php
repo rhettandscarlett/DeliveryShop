@@ -18,7 +18,7 @@ class DeliDefaultLocationProcedureController extends AppController {
   public function beforeFilter() {
     parent::beforeFilter();
     $this->modelClass = 'DeliDefaultLocationProcedure';
-    $this->set('locationList', $this->DeliLocation->find('list', array('conditions' => array('DeliLocation.is_default' => true))));
+    $this->set('locationList', $this->DeliLocation->find('list', array('conditions' => array('DeliLocation.is_default' => true, 'DeliLocation.deleted_time is null'))));
   }
 
   public function index() {
