@@ -27,7 +27,7 @@
       'bootstrap.min',
       'font-awesome.min',
       'jquery.ui',
-      'bootstrap-datetimepicker',
+//      'bootstrap-datetimepicker',
       'File.file',
     ));
     if (Configure::read('debug') > 1) {
@@ -47,7 +47,7 @@
       'libs/jquery-1.10.2.min',
       'libs/bootstrap.min',
       'libs/moment',
-      'libs/bootstrap-datetimepicker',
+//      'libs/bootstrap-datetimepicker',
     ));
     echo $this->Layout->js();
     echo $this->fetch('script');
