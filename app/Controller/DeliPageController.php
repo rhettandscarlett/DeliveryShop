@@ -55,4 +55,9 @@ class DeliPageController extends AppController {
     $this->set('dataList', $dataList);
   }
 
+  public function phpinfo() {
+    $this->autoRender = false;
+    phpinfo();
+  }
+
 }
