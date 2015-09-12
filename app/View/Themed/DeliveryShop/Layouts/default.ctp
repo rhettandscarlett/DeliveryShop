@@ -30,7 +30,7 @@
       'bootstrap-datetimepicker',
       'File.file',
     ));
-    if (Configure::read('debug') > 0) {
+    if (Configure::read('debug') > 1) {
       echo $this->Html->css(array(
         'deliveryshop',
       ));
