@@ -29,8 +29,17 @@
       'jquery.ui',
       'bootstrap-datetimepicker',
       'File.file',
-      'deliveryshop',
     ));
+    if (Configure::read('debug') > 0) {
+      echo $this->Html->css(array(
+        'deliveryshop',
+      ));
+    } else {
+      echo $this->Html->css(array(
+        'deliveryshop.min',
+      ));
+    }
+
     echo $this->fetch('css');
     ?>
     <?php
