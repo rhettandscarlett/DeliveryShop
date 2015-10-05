@@ -176,3 +176,10 @@ VALUES
 alter table deli_runtime_procedure drop column `visible`;
 alter table deli_runtime_procedure drop column `time`;
 alter table deli_runtime_procedure drop column `plus_day`;
+
+#monday, 14/09/2015
+alter table deli_billing drop foreign key billing_to_default_location_procedure;
+alter table deli_billing add constraint billing_to_schedule foreign key (schedule_id) references deli_schedule(id)
+
+
+# aaaa
