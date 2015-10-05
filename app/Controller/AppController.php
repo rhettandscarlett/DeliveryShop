@@ -119,7 +119,7 @@ class AppController extends Controller {
     parent::beforeRender();
     $this->set('controller', $this);
     $this->setHeadTitle();
-    $this->response->cache('-2 days', '+7 days');
+    $this->response->cache('-1 minute', '+5 days');
   }
 
   function setHeadTitle() {
